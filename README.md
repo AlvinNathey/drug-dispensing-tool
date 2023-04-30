@@ -31,3 +31,7 @@
  14. Patients to upload a prescription when ordering for medicine
  15. Pharmacists to keep records of patients together with medicines bought
  16. Have a rather simple and friendly user interface
+
+ Links to the githubs
+ 151367 Alvin  https://github.com/AlvinNathey/drug-dispensing-tool
+ 151957 Anthony  https://github.com/anthony-skjalfa/drug-dispensing-tool
