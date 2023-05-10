@@ -30,7 +30,7 @@
  13. Patients should be able to order medicine
  14. Patients to upload a prescription when ordering for medicine
  15. Pharmacists to keep records of patients together with medicines bought
- 16. Have a rather simple and friendly user interface
+ 16. Have a rather simple and  user friendly user interface
 
  Links to the githubs
  151367 Alvin  https://github.com/AlvinNathey/drug-dispensing-tool
