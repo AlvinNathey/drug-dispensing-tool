@@ -1,7 +1,7 @@
 <?php 
 
 echo "We're here in the next page";
-require_once("./connect.php");
+require_once("./connection.php");
 
     $SSN = $_POST["SSN"];
     $Name = $_POST["Name"];
