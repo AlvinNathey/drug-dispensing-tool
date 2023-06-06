@@ -7,36 +7,38 @@
     <body>
         <h1>Patient Registration</h1>
         <form method="post" action="./patientsignup.php">
-            <label for="">SSN</label>
-            <input type="" name= "SSN" required value="">
+            <label for="SSN">SSN</label>
+            <input type="text" name= "SSN" id="SSN" required>
             <br>
             <br>
-            <label for="">Name</label>
-            <input type="text" name="Name" required value="">
+            <label for="my_name">Name</label>
+            <input type="text" name="Name" id="my_name" required >
             <br>
             <br>
-            <label for="">Phone Number</label>
-            <input type="number" name= "Phone_no" required value="">
+            <label for="Phone_no">Phone Number</label>
+            <input type="number" name= "Phone_no" id="Phone_no" required >
             <br>
             <br>
-            <label for="">Email</label>
-            <input type="" name= "Email" required value="">
+            <label for="Email">Email</label>
+            <input type="email" name= "Email" id="Email" required >
             <br>
             <br>
-            <label for="">Password</label>
-            <input type="password" name= "P_password" required value="">
+            <label for="password">Password</label>
+            <input type="password" name= "P_password"id="password" required >
             <br>
             <br>
-            <label for="">Gender</label>
-            <input type="text" name= "Gender" required value="">
+            <label for="Gender">Gender</label>
+            <select id="gender" name="gender" id="Gender" required >
+                <option value="male">Male</option>
+                <option value="female">Female</option>
             <br>
             <br>
-            <label for="">Age</label>
-            <input type="number" name= "Age" required value="">
+            <label for="age">Age</label>
+            <input type="number" name= "Age" id="age" required >
             <br>
             <br>
-            <label for="">Associate Doctor</label>
-            <input type="text" name= "AssociateDoctor" required value="">
+            <label for="AssociateDoctor">Associate Doctor</label>
+            <input type="text" name= "AssociateDoctor" id="AssociateDoctor" required >
             <br>
             <br>
             <input type="submit" value="Submit">
