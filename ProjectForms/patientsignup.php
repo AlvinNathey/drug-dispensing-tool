@@ -1,6 +1,6 @@
 <?php 
 
-echo "We're here in the next page";
+echo "We're here in the next page.\n";
 require_once("./connection.php");
 
     $SSN = $_POST["SSN"];
