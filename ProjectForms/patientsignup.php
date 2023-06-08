@@ -9,12 +9,12 @@ require_once("./connection.php");
     $Phone_no = $_POST["Phone_no"];
     $Email = $_POST["Email"];
     $P_password = $_POST["P_password"];
-    $Gender = $_POST["Gender"];
+    $Gender = $_POST["gender"];
     $Age = $_POST["Age"];
     $AssociateDoctor = $_POST["AssociateDoctor"];
 
-$sql = "INSERT INTO tblpatients (SSN, Name, Phone_no, Email, P_password, Gender, Age, AssociateDoctor)
-VALUES ('$SSN','$Name','$Phone_no','$Email','$P_password','$Gender','$Age','$AssociateDoctor')";
+$sql = "INSERT INTO tblpatients (SSN, f_name, l_name, Phone_no, Email, P_password, Gender, Age, AssociateDoctor)
+VALUES ('$SSN','$f_name', '$l_name','$Phone_no','$Email','$P_password','$Gender','$Age','$AssociateDoctor')";
 
 if($conn->query($sql) === TRUE) {
     echo 
