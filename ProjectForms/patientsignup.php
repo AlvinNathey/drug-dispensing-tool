@@ -4,7 +4,8 @@ echo "We're here in the next page.\n";
 require_once("./connection.php");
 
     $SSN = $_POST["SSN"];
-    $Name = $_POST["Name"];
+    $f_name = $_POST["f_name"];
+    $l_name = $_POST["l_name"];
     $Phone_no = $_POST["Phone_no"];
     $Email = $_POST["Email"];
     $P_password = $_POST["P_password"];
