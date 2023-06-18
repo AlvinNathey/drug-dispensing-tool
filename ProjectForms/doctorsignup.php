@@ -3,14 +3,14 @@
 echo "We're here in the next page.\n";
 
 require_once("./connection.php");
-    $doctor_id=$_POST["doctor_id"];
-    $f_name = $_POST["f_name"];
-    $l_name = $_POST["l_name"];
-    $p_password = $_POST["p_password"];
+    $doc_id = $_POST["doc_id"];
+    $doc_fname = $_POST["doc_fname"];
+    $doc_lname = $_POST["doc_lname"];
+    $doc_password = $_POST["doc_password"];
     
 
-$sql = "INSERT INTO tbldoctors (doctor_id,f_name, l_name,p_password)
-VALUES ('$doctor_id','$f_name', '$l_name','$p_password')";
+$sql = "INSERT INTO tbldoctors (doc_id,doc_fname, doc_lname,doc_password)
+VALUES ('$doc_id','$doc_fname', '$doc_lname','$doc_password')";
 
 if($conn->query($sql) === TRUE) {
     echo 
