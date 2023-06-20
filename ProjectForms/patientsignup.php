@@ -13,7 +13,7 @@ require_once("./connection.php");
     $Age = $_POST["Age"];
     $AssociateDoctor = $_POST["AssociateDoctor"];
 
-$sql = "INSERT INTO tblpatients (SSN, f_name, l_name, Phone_no, Email, P_password, Gender, Age, AssociateDoctor)
+$sql = "INSERT INTO tblpatient (SSN, f_name, l_name, Phone_no, Email, P_password, Gender, Age, AssociateDoctor)
 VALUES ('$SSN','$f_name', '$l_name','$Phone_no','$Email','$P_password','$Gender','$Age','$AssociateDoctor')";
 
 if($conn->query($sql) === TRUE) {

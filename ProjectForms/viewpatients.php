@@ -14,7 +14,7 @@
             <?php
             require_once("./connection.php");
              echo"<br>";
-            $sql = " SELECT * FROM tblpatients ";
+            $sql = " SELECT * FROM tblpatient ";
             $result = $conn->query($sql);
 
             if($result-> num_rows > 0){
