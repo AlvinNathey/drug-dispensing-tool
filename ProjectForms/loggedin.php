@@ -8,7 +8,7 @@ if(isset($_SESSION['logging'])){
     <!DOCTYPE html>
     <html>
     <head>
-    <title>Admin Page</title>
+    <title>logged in page</title>
     </head>
     <body>
     <h2>Welcome, <?php echo $_SESSION["f_name"] ; ?></h2>
