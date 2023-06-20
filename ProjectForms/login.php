@@ -4,7 +4,6 @@ if(isset($_SESSION['logging']) && $_SESSION['logging'] === true){
 
 }
 require_once("connection.php");
-$username = $password = "";
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(isset($_POST['SSN'])  && isset($_POST['f_name']) && isset($_POST['P_password'])){
         function validate($data){
@@ -27,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             header("Password is required");
             exit();
         }else{
-            $sql = "SELECT * FROM tblpatients WHERE SSN='$SSN' AND f_name = '$f_name' AND P_password ='$P_password'";
+            $sql = "SELECT * FROM tblpatients WHERE SSN ='$SSN' AND f_name = '$f_name' AND P_password ='$P_password'";
             $result = $conn->query($sql);
             if($result->num_rows === 1){
                 $row = $result->fetch_assoc();

@@ -26,7 +26,6 @@
              echo "No results";
             }
              $conn->close();
-             //table added
              ?>
         </table>
     </body>    
