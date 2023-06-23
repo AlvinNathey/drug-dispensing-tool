@@ -50,7 +50,7 @@
                     <td> $row[Gender]</td>
                     <td> $row[Age]</td>
                     <td> $row[AssociateDoctor]</td>
-                    <td><a href = '/drugz/drug-dispensing-tool/ProjectForms/edited.php?SSN=$row[SSN]'> Edit </a> </td>
+                    <td><a href ='/drugz/drug-dispensing-tool/ProjectForms/edited.php?SSN=$row[SSN]'> Edit </a> </td>
                     <td><a href ='/drugz/drug-dispensing-tool/ProjectForms/delete.php?SSN=$row[SSN]'>Delete</a></td>
                      </tr>";
                     }
