@@ -9,7 +9,7 @@ require_once("./connection.php");
     $doc_password = $_POST["doc_password"];
     
 
-$sql = "INSERT INTO tbldoctor (doc_id,doc_fname, doc_lname,doc_password)
+$sql = "INSERT INTO tbldoctors (doc_id,doc_fname, doc_lname,doc_password)
 VALUES ('$doc_id','$doc_fname', '$doc_lname','$doc_password')";
 
 if($conn->query($sql) === TRUE) {
