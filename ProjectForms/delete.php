@@ -5,7 +5,7 @@ if(isset ($_GET["SSN"])){
 
     require_once("connection.php");
 
-    $sql = "DELETE  FROM tblpatient WHERE SSN ='$SSN' ";
+    $sql = "DELETE  FROM tblpatients WHERE SSN ='$SSN' ";
 
     $result= mysqli_query($conn, $sql);
 

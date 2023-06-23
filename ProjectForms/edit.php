@@ -77,7 +77,7 @@ $AssociateDocto =$_GET['AssociateDocto'];
     $Ag=$_GET['Ag'];
     $AssociateDocto=$_GET['AssociateDocto'];
    
-    $query="UPDATE tblpatient SET SS='$SSN', f_nam='$f_name', l_nam='$l_name', 
+    $query="UPDATE tblpatients SET SS='$SSN', f_nam='$f_name', l_nam='$l_name', 
     Phone_n='$Phone_no', Emai='$Email', P_passwor='$P_password',
      Gende='$Gender', Ag='$Age', AssociateDocto='$AssociateDoctor' WHERE SS='$SSN'";
     

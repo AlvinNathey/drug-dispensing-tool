@@ -10,7 +10,7 @@ require_once("./connection.php");
     $pharm_password = $_POST["pharm_password"];
        
 
-$sql = "INSERT INTO tblpharmacist (pharmacist_id, pharmacist_fname, pharmacist_lname, pharm_password) 
+$sql = "INSERT INTO tblpharmacists (pharmacist_id, pharmacist_fname, pharmacist_lname, pharm_password) 
 VALUES ('$pharmacist_id','$pharmacist_fname', '$pharmacist_lname','$pharm_password')";
 
 if($conn->query($sql) === TRUE) {
