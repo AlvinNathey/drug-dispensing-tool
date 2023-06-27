@@ -17,7 +17,7 @@
   </style>
 </head>
     <body>
-        <table>
+        <table id="patientstable">
             <th>SSN</th>
             <th>f_name</th>
             <th>l_name</th>
@@ -50,8 +50,8 @@
                     <td> $row[Gender]</td>
                     <td> $row[Age]</td>
                     <td> $row[AssociateDoctor]</td>
-                    <td><a href = '/drugz/drug-dispensing-tool/ProjectForms/edited.php?SSN=$row[SSN]'> Edit </a> </td>
-                    <td><a href ='/drugz/drug-dispensing-tool/ProjectForms/delete.php?SSN=$row[SSN]'>Delete</a></td>
+                    <td><a href = '/phptest/drug-dispensing-tool/ProjectForms/edit.php?SSN=$row[SSN]'> Edit </a> </td>
+                    <td><a href ='/phptest/drug-dispensing-tool/ProjectForms/delete.php?SSN=$row[SSN]'>Delete</a></td>
                      </tr>";
                     }
              }
@@ -61,5 +61,6 @@
              $conn->close();
              ?>
         </table>
+        <script type='text/javascript' src="pagination.js" ></script>
     </body>    
 </html>
