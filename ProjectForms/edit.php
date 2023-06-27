@@ -1,87 +1,118 @@
 <?php
-include("connection.php");
-error_reporting(0);
+require_once("connection.php");
+$SSN = "";
+$f_name = "";
+$l_name = "";
+$Phone_no = "";
+$Email = "";
+$P_password = ""; 
+$Gender = "";
+$Age = "";
+$AssociateDoctor = "";
 
-$SS =$_GET['SS'];
-$f_name =$_GET['f_nam'];
-$l_nam =$_GET['l_nam'];
-$Phone_n =$_GET['Phone_n'];
-$Emai =$_GET['Emai'];
-$P_passwor =$_GET['P_passwor'];
-$Gende =$_GET['Gende'];
-$Ag =$_GET['Ag'];
-$AssociateDocto =$_GET['AssociateDocto'];
+ if($_SERVER['REQUEST_METHOD'] == 'GET'){
+
+    if(!isset($_GET["SSN"])){
+        header("Location: viewpatients.php");
+    }
+
+    $SSN=$_GET["SSN"];
+
+    $sql="SELECT * FROM tblpatients WHERE SSN= $SSN ";
+    $result = mysqli_query($conn, $sql);
+    $row=$result->fetch_assoc();
+ 
+    if(!$row ){
+         header("Location: viewpatients.php");
+         exit;
+    }
+    $SSN = $row["SSN"];
+    $f_name = $row["f_name"];
+    $l_name = $row["l_name"];
+    $Phone_no = $row["Phone_no"];
+    $Email = $row["Email"];
+    $P_password = $row["P_password"];
+    $Gender = $row["Gender"];
+    $Age = $row["Age"];
+    $AssociateDoctor = $row["AssociateDoctor"];
+
+ }elseif(isset($_POST['SSN'])){
+     
+    $SSN = $_POST["SSN"];
+    $f_name = $_POST["f_name"];
+    $l_name = $_POST["l_name"];
+    $Phone_no = $_POST["Phone_no"];
+    $Email = $_POST["Email"];
+    $P_password = $_POST["P_password"];
+    $Gender = $_POST["Gender"];
+    $Age = $_POST["Age"];
+    $AssociateDoctor = $_POST["AssociateDoctor"];
+
+    
+        if(empty($SSN) || empty($f_name) || empty($l_name)|| empty($Phone_no)|| empty($Email)|| empty($P_password)|| empty($Gender)|| empty($Age)|| empty($AssociateDoctor)){
+            echo "All fields are required "; 
+            
+        }
+
+        $sql="UPDATE tblpatients SET SSN='$SSN',l_name='$l_name',Phone_no ='$Phone_no',Email='$Email',P_password='$P_password', Gender='$Gender', Age='$Age', AssociateDoctor='$AssociateDoctor' WHERE SSN=$SSN";
+
+        $result = mysqli_query($conn, $sql);
+
+        header('Location: viewpatients.php');
+
+    
+
+    
+    } 
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Patient Signup</title>
-
-    </head>
-    <body>
-        <h1>Patient Editing</h1>
-        <form method="post" action="patientsignup.php">
+<head>
+    <title>Patient edit</title>
+</head>
+<body>
+    <h1>Edit </h1>
+    <form action="" method="post" >
             <label for="SSN">SSN</label>
-            <input type="text" name= "SSN" value="<?php echo"$SS"?>" id="SSN" maxlength="10" required>
+            <input type="number" name= "SSN" id="SSN" maxlength="10" required value ="<?php echo $SSN ?>">
             <br>
             <br>
             <label for="f_name">First name</label>
-            <input type="text" name="f_name"value="<?php echo"$f_nam"?>" id="f_name" maxlength="20" required >
+            <input type="text" name="f_name" id="f_name" maxlength="20" required value ="<?php echo $f_name ?>">
             <br>
             <br>
             <label for="l_name">Last name</label>
-            <input type="text" name="l_name" value="<?php echo"$l_nam"?>" id="l_name" maxlength="20" required >
+            <input type="text" name="l_name" id="l_name" maxlength="20" required value ="<?php echo $l_name ?>">
             <br>
             <br>
             <label for="Phone_no">Phone Number</label>
-            <input type="number" name= "Phone_no" value="<?php echo"$Phone_n"?>" id="Phone_no" maxlength="10" required >
+            <input type="number" name= "Phone_no" id="Phone_no" maxlength="10" required value ="<?php echo $Phone_no ?>">
             <br>
             <br>
             <label for="Email">Email</label>
-            <input type="email" name= "Email" value="<?php echo"$Emai"?>" id="Email" maxlength="20" required >
+            <input type="email" name= "Email" id="Email" maxlength="20" required value ="<?php echo $Email ?>">
             <br>
             <br>
-            <label for="password">Password</label>
-            <input type="password" name= "P_password" value="<?php echo"$P_passwor"?>"id="password" maxlength="20" required >
+            <label for="P_password">Password</label>
+            <input type="password" name= "P_password"id="P_password" maxlength="20" required value ="<?php echo $P_password ?>">
             <br>
             <br>
             <label for="Gender">Gender</label>
-            <select id="gender" value="<?php echo"$Gende"?>" name="gender">
+            <select id="Gender" name="Gender" required value="<?php echo $Gender ?>">
                 <option value="male">Male</option>
                 <option value="female">Female</option>
             </select>
             <br>
             <br>
-            <label for="age">Age</label>
-            <input type="number" name= "Age" value="<?php echo"$Ag"?>" id="age"  maxlength="20"required >
+            <label for="Age">Age</label>
+            <input type="number" name= "Age" id="Age"  maxlength="20"required value ="<?php echo $Age ?>">
             <br>
             <br>
             <label for="AssociateDoctor">Associate Doctor</label>
-            <input type="text" name= "AssociateDoctor"value="<?php echo"$AssociateDocto"?>" id="AssociateDoctor" required >
+            <input type="text" name= "AssociateDoctor" id="AssociateDoctor" required value ="<?php echo $AssociateDoctor ?>">
             <br>
             <br>
-            <input type="submit" value="Update">
+            <input type="submit" value="edit">
         </form>
-    </body> 
+</body>
 </html>
- <?php
- if($_GET['submit'])
- {
-    $SS=$_GET['SS'];
-    $f_nam=$_GET['f_nam'];
-    $l_nam=$_GET['l_nam'];
-    $Phone_n=$_GET['Phone_n'];
-    $Emai=$_GET['Emai'];
-    $P_passwor=$_GET['P_passwor'];
-    $Gende=$_GET['Gende'];
-    $Ag=$_GET['Ag'];
-    $AssociateDocto=$_GET['AssociateDocto'];
-   
-    $query="UPDATE tblpatients SET SS='$SSN', f_nam='$f_name', l_nam='$l_name', 
-    Phone_n='$Phone_no', Emai='$Email', P_passwor='$P_password',
-     Gende='$Gender', Ag='$Age', AssociateDocto='$AssociateDoctor' WHERE SS='$SSN'";
-    
-    $data=mysqli_query($conn,$query);
-  
- } 
- ?>
