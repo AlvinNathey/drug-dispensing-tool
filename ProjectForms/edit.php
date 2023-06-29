@@ -54,7 +54,7 @@ $AssociateDoctor = "";
             
         }
 
-        $sql="UPDATE tblpatients SET SSN='$SSN',l_name='$l_name',Phone_no ='$Phone_no',Email='$Email',P_password='$P_password', Gender='$Gender', Age='$Age', AssociateDoctor='$AssociateDoctor' WHERE SSN=$SSN";
+        $sql="UPDATE tblpatients SET SSN='$SSN', f_name ='$f_name',l_name='$l_name',Phone_no ='$Phone_no',Email='$Email',P_password='$P_password', Gender='$Gender', Age='$Age', AssociateDoctor='$AssociateDoctor' WHERE SSN=$SSN";
 
         $result = mysqli_query($conn, $sql);
 
