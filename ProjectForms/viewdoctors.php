@@ -38,8 +38,8 @@
                     <td> $row[doc_fname] </td>
                     <td> $row[doc_lname]</td>
                     <td> $row[doc_password]</td>
-                    <td><a href = '/drugz/drug-dispensing-tool/ProjectForms/editdoctors.php?doc_id=$row[doc_id]'> Edit </a> </td>
-                    <td><a href ='/drugz/drug-dispensing-tool/ProjectForms/deletedoctors.php?doc_id=$row[doc_id]'>Delete</a></td>
+                    <td><a href = '/phptest/drug-dispensing-tool/ProjectForms/editdoctors.php?doc_id=$row[doc_id]'> Edit </a> </td>
+                    <td><a href ='/phptest/drug-dispensing-tool/ProjectForms/deletedoctors.php?doc_id=$row[doc_id]'>Delete</a></td>
                      </tr>";
                     }
              }

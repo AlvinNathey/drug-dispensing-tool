@@ -19,13 +19,13 @@ if(isset($_SESSION['logging'])){
     </head>
     <body>
        <div class="welcome">
-    <h3>Welcome, <?php echo $_SESSION["f_name"] ; ?></h3>
+    <h3>Welcome Pharm, <?php echo $_SESSION["pharmacist_fname"] ; ?></h3>
         </div>
     </body>
     </html>
 
 <?php
 }else{
-    header("Location: login.html");
+    header("Location: pharmlogin.html");
 }
 ?>

@@ -38,8 +38,8 @@
                     <td> $row[pharmacist_fname] </td>
                     <td> $row[pharmacist_lname]</td>
                     <td> $row[pharm_password]</td>
-                    <td><a href = '/drugz/drug-dispensing-tool/ProjectForms/editpharmacists.php?pharmacist_id=$row[pharmacist_id]'> Edit </a> </td>
-                    <td><a href ='/drugz/drug-dispensing-tool/ProjectForms/deletepharmacists.php?pharmacist_id=$row[pharmacist_id]'>Delete</a></td>
+                    <td><a href = '/phptest/drug-dispensing-tool/ProjectForms/editpharmacists.php?pharmacist_id=$row[pharmacist_id]'> Edit </a> </td>
+                    <td><a href ='/phptest/drug-dispensing-tool/ProjectForms/deletepharmacists.php?pharmacist_id=$row[pharmacist_id]'>Delete</a></td>
                      </tr>";
                     }
              }
