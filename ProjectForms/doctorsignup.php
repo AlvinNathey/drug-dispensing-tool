@@ -2,7 +2,7 @@
 
 echo "We're here in the next page.\n";
 
-require_once("/connection.php");
+require_once("connection.php");
     $doc_id = $_POST["doc_id"];
     $doc_fname = $_POST["doc_fname"];
     $doc_lname = $_POST["doc_lname"];

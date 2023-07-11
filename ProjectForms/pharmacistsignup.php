@@ -1,7 +1,7 @@
 <?php 
 
 echo "We're here in the next page.\n";
-require_once("./connection.php");
+require_once("connection.php");
 
 
     $pharmacist_id = $_POST["pharmacist_id"];

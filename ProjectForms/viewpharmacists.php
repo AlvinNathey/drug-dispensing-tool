@@ -17,7 +17,7 @@
   </style>
 </head>
     <body>
-        <table id="pharmaciststable">
+        <table id="patientstable">
             <th>pharmacist_id</th>
             <th>pharmacist_fname</th>
             <th>pharmacistl_name</th>
