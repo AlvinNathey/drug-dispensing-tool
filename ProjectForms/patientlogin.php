@@ -37,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $_SESSION['SSN'] = $row['SSN'];
                     $_SESSION['f_name'] = $row['f_name'];
                     $_SESSION['P_password'] = $row['P_password'];
-                    header("location: loggedin.php");
+                    header("location: patientloggedin.php");
                     exit();
                 }else{
                     header("Incorrect username or password");

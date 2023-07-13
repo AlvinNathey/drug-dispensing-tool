@@ -17,6 +17,7 @@
   </style>
 </head>
     <body>
+    <h3>This is the pharmacist's table<h3>
         <table id="patientstable">
             <th>pharmacist_id</th>
             <th>pharmacist_fname</th>

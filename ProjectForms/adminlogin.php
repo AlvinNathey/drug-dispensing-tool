@@ -13,9 +13,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             return $data;
         }
     
-        $doc_id = validate($_POST['admin_id']);
-        $doc_fname = validate($_POST['admin_fname']);
-        $doc_password = validate($_POST['admin_password']);
+        $admin_id = validate($_POST['admin_id']);
+        $admin_fname = validate($_POST['admin_fname']);
+        $admin_password = validate($_POST['admin_password']);
         if(empty($admin_id)){
             header("Username is required");
             exit();
@@ -30,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $result = $conn->query($sql);
             if($result->num_rows === 1){
                 $row = $result->fetch_assoc();
-                if($row['doc_id']==$doc_id && $row['doc_fname'] == $doc_fname && $row['doc_password']==$doc_password){
+                if($row['admin_id']==$admin_id && $row['admin_fname'] == $admin_fname && $row['admin_password']==$admin_password){
                     session_start();
                     echo "Logged in";
                     $_SESSION['logging'] = true;
