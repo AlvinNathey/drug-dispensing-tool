@@ -3,13 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://kit.fontawesome.com/45864aec1b.js" crossorigin="anonymous"></script>
+    <title>Home page</title>
     <link rel="stylesheet" href="homepage.css">
 </head>
 <body>
-    <img src="logo.png" alt="Logo to the homepage">
 
-    Hi
+    <header>
+      
+         <div id="header-desc">
+            <h1>Map Example</h1>
+            <p class="pos1">About us</p>
+            <p class="pos2">contact </p>
+            <p class="pos3">parnerships</p>
+         </div>
+         
+         <input type="submit" value="Doctor" class="doctorbutton" onclick="redirectToDoctorLogIn()">
+         <script>
+           function redirectToDoctorLogIn() {
+             window.location.href = "doctorlogin.html";
+           }
+         </script>
+         
+         <input type="submit" value="Admin" class="adminbutton" onclick="redirectToAdminLogIn()">
+         <script>
+           function redirectToAdminLogIn() {
+             window.location.href = "adminlogin.html";
+           }
+         </script>
+         
+         <input type="submit" value="Pharmacist" class="pharmbutton" onclick="redirectToPharmacistLogIn()">
+         <script>
+           function redirectToPharmacistLogIn() {
+             window.location.href = "pharmlogin.html";
+           }
+         </script>
+         
+         <div id="header-menu">
+           
+         </div>
+
+	</header>
+
+    <p>
+        <h2>Your health comes First<h2>
+    </p>
+    <p id="subheadline">
+      The primary focus is to ensure the well-being and safety of individuals by providing access to essential medications.
+       This includes dispensing prescribed drugs with precision, offering necessary counseling on medication usage and potential side effects, and promoting adherence to treatment plans.
+      
+      </p>
+
+	<button type="button" onclick="redirectToLogIn()">patient</button>
+
+<script>
+  function redirectToLogIn() {
+    window.location.href = "patientlogin.html";
+  }
+</script>
+
+<br>
+A drug dispensing unit is an integral part of the healthcare system, playing a crucial role in ensuring access to medications for individuals in need. Beyond its primary function of providing pharmaceutical drugs, a modern drug dispensing unit goes beyond traditional boundaries by forging numerous partnerships and collaborations with various stakeholders to make the world a better place.These partnerships encompass a wide range of entities, including pharmaceutical companies, healthcare providers, research institutions, regulatory bodies, and community organizations. By establishing strong alliances, the drug dispensing unit gains access to a diverse array of resources, expertise, and knowledge that ultimately benefits the patients and the broader community.The unit's aim to make the world a better place is multi-faceted. Firstly, it strives to enhance patient outcomes by ensuring the availability of safe, effective, and affordable medications. Through partnerships with pharmaceutical companies, it can negotiate favorable pricing and expand its medication inventory, catering to a wider range of patient needs.Secondly, the drug dispensing unit actively engages in research collaborations with academic institutions and research organizations. By participating in clinical trials and research studies, it contributes to the advancement of medical knowledge, leading to improved treatment options and innovative therapies
+	<br>
+  For any assistance feel free to reach us through:<br>
+  07456543652 or send a text to 23490 
+<br><br>
+	<footer>
+        © 2009 — 2022 
+        Lorem ipsum dolor sit 
+    </footer>
+	
+
 </body>
 </html>
