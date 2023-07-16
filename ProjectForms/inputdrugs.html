@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor login</title>
+    <link rel="stylesheet" type="text/css" href="decorate.css">
+</head>
+<body>
+
+    <h1>Input drugs</h1>
+    <form method="post" action="inputdrugs.php">
+        <label for="drug_name">Drug name</label>
+            <input type="text" name= "drug_name" id="drug_id" maxlength="100" required>
+            <br>
+            <br>
+           <label for="drug_id">Drug ID</label>
+            <input type="text" name="drug_id" id="drug_id" maxlength="20" required >
+            <br>
+            <br>
+            <label for="drug_quantity">Quantity</label>
+            <input type="number" name="drug_quantity" id="drug_quantity" maxlength="20" required >
+            <br>
+            <br>
+            <label for="drug_price">Price per unit</label>
+            <input type="number" name= "drug_price"id="drug_price" maxlength="20" required >
+            <br>
+            <br>
+            <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
