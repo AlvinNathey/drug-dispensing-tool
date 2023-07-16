@@ -34,4 +34,4 @@
 
  Links to the githubs
  151367 Alvin  https://github.com/AlvinNathey/drug-dispensing-tool
- 151957 Anthony  https://github.com/anthony-skjalfa/drug-dispensing-tool
+ 151957 Anthony  https://github.com/Dev-Anthony-Kimanthi/drug-dispensing-tool
