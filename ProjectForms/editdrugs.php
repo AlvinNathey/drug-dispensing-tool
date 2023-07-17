@@ -73,7 +73,7 @@ $drug_price = "";
             <br>
             <br>
             <label for="drug_quantity">Quantity</label>
-            <input type="number" name="drug_quantity" id="drug_quantity" maxlength="20" required value = "<?php echo $drug_quantity?>">
+            <input type="text" name="drug_quantity" id="drug_quantity" maxlength="20" required value = "<?php echo $drug_quantity?>">
             <br>
             <br>
             <label for="drug_price">Price per unit</label>
