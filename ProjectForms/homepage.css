@@ -1,43 +1,41 @@
 header {
- 
-  background-color : slategray;
-  color : white;
+  background-color: slategray;
+  color: white;
 }
 
 header p {
-  font-size : 150%;
+  font-size: 150%;
 }
 
 #header-icon {
-  display : inline-block;
-  margin: 50px 10px 50px
+  display: inline-block;
+  margin: 50px 10px 50px;
 }
 
 #header-desc {
-  display : inline-block;
-  margin : 25px;
-
+  display: inline-block;
+  margin: 25px;
 }
 
 #header-menu {
-  display : inline-block;
+  display: inline-block;
   float: right;
-  margin : 75px 50px 50px 50px;
+  margin: 75px 50px 50px 50px;
 }
 
-body{
+body {
   background-color: rgb(203, 222, 141);
- 
-
 }
-footer{
+
+footer {
   text-align: center;
   padding: 3px;
   background-color: DarkSalmon;
   color: white;
-display: block;
+  display: block;
 }
-button{
+
+button {
   background-color: #9d2f16;
   color: #fff;
   border: none;
@@ -45,61 +43,107 @@ button{
   border-radius: 4px;
   cursor: pointer;
 }
-.doctorbutton{
+
+.doctorbutton {
   position: absolute;
-top: 10px; 
-right: 250px;
-font-size: 20px;
-background-color: #169d99;
+  top: 10px;
+  right: 250px;
+  font-size: 20px;
+  background-color: #169d99;
   color: #fff;
   border: none;
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
 }
-.adminbutton{
+
+.adminbutton {
   position: absolute;
-top: 10px; 
-right: 150px;
-font-size: 20px;
-background-color: #7d6b67;
+  top: 10px;
+  right: 150px;
+  font-size: 20px;
+  background-color: #7d6b67;
   color: #fff;
   border: none;
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
 }
-.pharmbutton{
+
+.pharmbutton {
   position: absolute;
-top: 10px; 
-right: 08px;
-font-size: 20px;
-background-color: #557ea4;
+  top: 10px;
+  right: 8px;
+  font-size: 20px;
+  background-color: #557ea4;
   color: #fff;
   border: none;
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
 }
-.pos1{
+
+.pos1 {
   position: absolute;
   top: 20px;
   right: 360px;
 }
-.pos2{
+
+.pos2 {
   position: absolute;
   top: 20px;
   right: 490px;
 }
-.pos3{
+
+.pos3 {
   position: absolute;
   top: 20px;
   right: 580px;
 }
-#subheadline{
-  font-size: small;
+
+#subheadline {
+  font-size: 60%;
+}
+
+p {
+  font-size: smaller;
+}
+.box0{
+  border: 1px solid black;
+  padding: 10px;
+  height: 150px;
+}
+.box1{
+  border: 1px solid black;
+  padding: 10px;
+  height: 350px;
+}
+.box2{
+  border: 1px solid black;
+  padding: 10px;
+
+}
+.box3{
+  border: 1px solid black;
+  padding: 10px;
  
 }
-p{
-  font-size: smaller;
+.box4{
+  border: 1px solid black;
+  padding: 10px;
+  height: 100px;
+}
+#orderButton {
+  position: absolute;
+  top: 440px;
+  left: 20px;
+  width: 300px;
+  height: 60px;
+  font-size: 20px;
+ 
+}
+h1 {
+  position: absolute;
+  top:30px;
+  left: 270px;
 }

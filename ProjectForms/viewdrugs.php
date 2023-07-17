@@ -39,8 +39,8 @@
                     <td> $row[drug_id] </td>
                     <td> $row[drug_quantity]</td>
                     <td> $row[drug_price]</td>
-                    <td><a href = '/drug-dispensing-tool/drug-dispensing-tool/ProjectForms/editdrugs.php?drug_name=$row[drug_name]'> Edit </a> </td>
-                    <td><a href ='/drug-dispensing-tool/drug-dispensing-tool/ProjectForms/deletedrugs.php?drug_name=$row[drug_name]'>Delete</a></td>
+                    <td><a href = '/phptest/drug-dispensing-tool/ProjectForms/editdrugs.php?drug_name=$row[drug_name]'> Edit </a> </td>
+                    <td><a href ='/phptest/drug-dispensing-tool/ProjectForms/deletedrugs.php?drug_name=$row[drug_name]'>Delete</a></td>
                      </tr>";
                     }
              }
