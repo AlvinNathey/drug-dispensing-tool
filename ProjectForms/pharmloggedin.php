@@ -27,6 +27,12 @@ if(isset($_SESSION['logging'])){
            function redirectToDrugsView() {
              window.location.href = "inputdrugs.html";}
          </script>
+
+<input type="submit" value="View drugs in the db" class="doctorbutton" onclick="redirectToViewDrugs()">
+         <script>
+           function redirectToViewDrugs() {
+             window.location.href = "viewdrugs.php";}
+         </script>
     </body>
     </html>
 
