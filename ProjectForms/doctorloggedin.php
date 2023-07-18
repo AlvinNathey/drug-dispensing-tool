@@ -24,7 +24,7 @@ if(isset($_SESSION['logging'])){
         </div>
        <h2> Write patient's prescripton <h2>
        <h3> Enter the patient's SSN <h3>
-       <form method="post" action="patientsignup.php">
+       <form method="post" action="insertprescription.php">
             <label for="SSN">SSN</label>
             <input type="text" name= "SSN" id="SSN" maxlength="10" required>
             <br>
@@ -35,8 +35,11 @@ if(isset($_SESSION['logging'])){
             <label for="diagnosis">Diagnosis:</label>
              <textarea id="diagnosis" name="diagnosis" required></textarea><br>
              <br><br>
-           <label for="medication">Medication:</label>
-           <textarea id="medication" name="medication" required></textarea><br>
+           <label for="drug_name">Drug name:</label>
+           <textarea id="drug_name" name="drug_name" required></textarea><br>
+           <br><br>
+           <label for="dosage">Dosage:</label>
+           <textarea id="dosage" name="dosage" required></textarea><br>
            <br><br>
          
     <input type="submit" value="Submit Prescription">
