@@ -115,7 +115,7 @@ p {
 .box1{
   border: 1px solid black;
   padding: 10px;
-  height: 350px;
+  height: 360px;
 }
 .box2{
   border: 1px solid black;
@@ -197,7 +197,7 @@ h1 {
 .health{
   position: absolute;
   width: 40%;
-  height: 60%;
+  height: 65%;
   top: 180px;
   left: 750px;
 }
