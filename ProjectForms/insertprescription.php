@@ -12,7 +12,7 @@ require_once("connection.php");
     
 
 $sql = "INSERT INTO tblprescriptions (SSN, f_name, diagnosis, drug_name, drug_prize, dosage)
-VALUES ('$SSN','$f_name', '$diagnosis','$drug_name','$drug_prize ' '$dosage')";
+VALUES ('$SSN','$f_name', '$diagnosis','$drug_name','$drug_prize ', '$dosage')";
 
 if($conn->query($sql) === TRUE) {
     echo 
