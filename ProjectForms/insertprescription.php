@@ -7,11 +7,12 @@ require_once("connection.php");
     $f_name = $_POST["f_name"];
     $diagnosis = $_POST["diagnosis"];
     $drug_name = $_POST["drug_name"];
+    $drug_prize = $_POST["drug_prize"];
     $dosage = $_POST["dosage"];
     
 
-$sql = "INSERT INTO tblprescriptions (SSN, f_name, diagnosis, drug_name, dosage)
-VALUES ('$SSN','$f_name', '$diagnosis','$drug_name', '$dosage')";
+$sql = "INSERT INTO tblprescriptions (SSN, f_name, diagnosis, drug_name, drug_prize, dosage)
+VALUES ('$SSN','$f_name', '$diagnosis','$drug_name','$drug_prize ' '$dosage')";
 
 if($conn->query($sql) === TRUE) {
     echo 

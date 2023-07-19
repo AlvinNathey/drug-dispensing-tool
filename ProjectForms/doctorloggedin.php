@@ -38,6 +38,9 @@ if(isset($_SESSION['logging'])){
            <label for="drug_name">Drug name:</label>
            <textarea id="drug_name" name="drug_name" required></textarea><br>
            <br><br>
+           <label for="drug_prize">Drug prize:</label>
+           <textarea id="drug_prize" name="drug_prize" required></textarea><br>
+           <br><br>
            <label for="dosage">Dosage:</label>
            <textarea id="dosage" name="dosage" required></textarea><br>
            <br><br>

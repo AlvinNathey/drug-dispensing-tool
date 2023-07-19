@@ -12,7 +12,7 @@ if(isset($_SESSION['logging'])){
     .welcome {
       position: absolute;
       top: 0;
-      right: 550px;
+      right: 0;
     }
     table {
       width: 100%;
@@ -54,6 +54,7 @@ if(isset($_SESSION['logging'])){
             <th>f_name</th>
             <th>diagnosis</th>
             <th>drug name</th>
+            <th>drug price</th>
             <th>dosage</th>
 
             <?php
@@ -72,6 +73,7 @@ if(isset($_SESSION['logging'])){
                     <td> $row[f_name] </td>
                     <td> $row[diagnosis]</td>
                     <td> $row[drug_name]</td>
+                    <td> $row[drug_prize]</td>
                     <td> $row[dosage]</td>
                      </tr>";
                     }
