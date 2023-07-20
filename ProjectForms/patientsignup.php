@@ -22,6 +22,6 @@ if($conn->query($sql) === TRUE) {
 }else {
     echo "Error: ".$sql."<br>".$conn->error;
 }
-
+header("location: patientlogin.html");
 $conn->close();
 ?>
