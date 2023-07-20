@@ -52,6 +52,53 @@ if (isset($_SESSION['logging'])) {
         }
     </script>
 
+<p>Enter your SSN</p>
+        <form method="post" action="">
+            <label for="SSN">SSN</label>
+            <input type="text" name= "SSN" id="SSN" maxlength="50" required>
+            <br>
+            <br>
+            <input type="submit" name="search" id="search" value="search" >
+            <br>
+            <br>
+         </form>
+           <p> For prescriptions:</p>
+         <table>
+            <th>SSN</th>
+            <th>f_name</th>
+            <th>diagnosis</th>
+            <th>drug name</th>
+            <th>drug price</th>
+            <th>dosage</th>
+
+            <?php
+            require_once("connection.php");
+             echo"<br>";
+             if(isset($_POST['SSN'])){
+              $SSN = $_POST['SSN'];
+
+            $sql = " SELECT * FROM tblprescriptions WHERE SSN = $SSN";
+             }
+            $result = $conn->query($sql);
+            if($result-> num_rows > 0){
+                    while($row = $result -> fetch_assoc()){
+                    echo "<tr>
+                    <td> $row[SSN]</td>  
+                    <td> $row[f_name] </td>
+                    <td> $row[diagnosis]</td>
+                    <td> $row[drug_name]</td>
+                    <td> $row[drug_prize]</td>
+                    <td> $row[dosage]</td>
+                     </tr>";
+                    }
+             }
+            else{
+             echo "No results";
+            }
+             //$conn->close();
+             ?>
+        </table>
+
     <h3>This is all the patient's prescription</h3>
     <table id="patientstable">
         <th>SSN</th>
