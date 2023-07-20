@@ -26,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $drug_quantity = $row["drug_quantity"];
     $drug_price = $row["drug_price"];
 } elseif (isset($_POST['drug_name'])) {
+    $old_drug_name = $_GET["drug_name"]; // Keep the original drug_name for comparison
     $drug_name = $_POST["drug_name"];
     $drug_id = $_POST["drug_id"];
     $drug_quantity = $_POST["drug_quantity"];
@@ -40,15 +41,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     if (empty($drug_name) || empty($drug_id) || empty($drug_quantity) || empty($drug_price)) {
         echo "All fields are required ";
     } else {
-        $sql = "UPDATE tbldrugs SET drug_name ='$drug_name', drug_id ='$drug_id', drug_quantity='$drug_quantity', drug_price ='$drug_price' WHERE drug_name = '$drug_name' ";
+        // Check if the new drug_name already exists in the database
+        $check_sql = "SELECT * FROM tbldrugs WHERE drug_name = '$drug_name'";
+        $check_result = mysqli_query($conn, $check_sql);
+        $existing_row = $check_result->fetch_assoc();
 
-        $result = mysqli_query($conn, $sql);
-
-        if ($result) {
-            header('Location: viewdrugs.php');
-            exit;
+        if ($existing_row && $drug_name !== $old_drug_name) {
+            echo "Drug name already exists. Please choose a different name.";
         } else {
-            echo "Error updating drug information: " . mysqli_error($conn);
+            // Update the drug information including drug_name
+            $sql = "UPDATE tbldrugs SET drug_name ='$drug_name', drug_id ='$drug_id', drug_quantity='$drug_quantity', drug_price ='$drug_price' WHERE drug_name = '$old_drug_name' ";
+
+            $result = mysqli_query($conn, $sql);
+
+            if ($result) {
+                header('Location: viewdrugs.php');
+                exit;
+            } else {
+                echo "Error updating drug information: " . mysqli_error($conn);
+            }
         }
     }
 }
