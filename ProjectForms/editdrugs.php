@@ -14,7 +14,7 @@ $drug_price = "";
 
     $drug_name=$_GET["drug_name"];
 
-    $sql="SELECT * FROM tbldrugs WHERE drug_name= '$drug_name' ";
+    $sql="SELECT * FROM tbldrugs WHERE drug_name = '$drug_name' ";
     $result = mysqli_query($conn, $sql);
     $row=$result->fetch_assoc();
  
@@ -40,7 +40,7 @@ $drug_price = "";
             
         }
 
-        $sql="UPDATE tbldrugs SET drug_name ='$drug_name',drug_id ='$drug_id',drug_quantity='$drug_quantity',drug_price ='$drug_price' WHERE drug_name = '$drug_name' ";
+        $sql="UPDATE tbldrugs SET drug_name ='$drug_name',drug_id ='$drug_id',drug_quantity='$drug_quantity',drug_price ='$drug_price' WHERE drug_name = $drug_name ";
 
         $result = mysqli_query($conn, $sql);
 
@@ -57,7 +57,7 @@ $drug_price = "";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit doctors</title>
+    <title>Edit drugs</title>
     <link rel="stylesheet" type="text/css" href="decorate.css">
 </head>
 <body>
@@ -65,7 +65,7 @@ $drug_price = "";
     <h1>Edit drugs</h1>
     <form method="post" action="">
         <label for="drug_name">Drug name</label>
-            <input type="text" name= "drug_name" id="drug_id" maxlength="100" required value = "<?php echo $drug_name?>">
+            <input type="text" name= "drug_name" id="drug_name" maxlength="100" required value = "<?php echo $drug_name?>">
             <br>
             <br>
            <label for="drug_id">Drug ID</label>

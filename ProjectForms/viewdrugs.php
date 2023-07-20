@@ -18,7 +18,7 @@
 </head>
     <body>
       <h3>This is the table for drugs<h3>
-        <table id="drugstable">
+        <table id="patientstable">
             <th>drug_name</th>
             <th>drug_id</th>
             <th>drug_quantity</th>
