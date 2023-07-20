@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-if(isset($_SESSION['logging'])){
+if (isset($_SESSION['logging'])) {
 
 ?>
-    
+
     <!DOCTYPE html>
     <html>
     <head>
@@ -33,16 +33,16 @@ if(isset($_SESSION['logging'])){
     </head>
     <body>
        <div class="welcome">
-    <h3>Welcome, <?php echo $_SESSION["f_name"] ; ?></h3>
+    <h3>Welcome, <?php echo $_SESSION["f_name"]; ?></h3>
     
         </div>
         <p>Enter your SSN</p>
         <form method="post" action="">
             <label for="SSN">SSN</label>
-            <input type="text" name= "SSN" id="SSN" maxlength="50" required>
+            <input type="text" name="SSN" id="SSN" maxlength="50" required>
             <br>
             <br>
-            <input type="submit" name="search" id="search" value="search" >
+            <input type="submit" name="search" id="search" value="search">
             <br>
             <br>
          </form>
@@ -59,30 +59,38 @@ if(isset($_SESSION['logging'])){
 
             <?php
             require_once("connection.php");
-             echo"<br>";
-             if(isset($_POST['SSN'])){
-              $SSN = $_POST['SSN'];
+            echo "<br>";
 
-            $sql = " SELECT * FROM tblprescriptions WHERE SSN = $SSN";
-             }
-            $result = $conn->query($sql);
-            if($result-> num_rows > 0){
-                    while($row = $result -> fetch_assoc()){
-                    echo "<tr>
-                    <td> $row[SSN]</td>  
-                    <td> $row[f_name] </td>
-                    <td> $row[diagnosis]</td>
-                    <td> $row[drug_name]</td>
-                    <td> $row[drug_prize]</td>
-                    <td> $row[dosage]</td>
-                     </tr>";
+            // Check if the form is submitted and SSN is set
+            if (isset($_POST['search']) && isset($_POST['SSN'])) {
+                $SSN = $_POST['SSN'];
+
+                // Use prepared statement to prevent SQL injection
+                $stmt = $conn->prepare("SELECT * FROM tblprescriptions WHERE SSN = ?");
+                $stmt->bind_param("s", $SSN);
+                $stmt->execute();
+                $result = $stmt->get_result();
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>
+                            <td> $row[SSN]</td>  
+                            <td> $row[f_name] </td>
+                            <td> $row[diagnosis]</td>
+                            <td> $row[drug_name]</td>
+                            <td> $row[drug_prize]</td>
+                            <td> $row[dosage]</td>
+                             </tr>";
                     }
-             }
-            else{
-             echo "No results";
+                } else {
+                    echo "No results";
+                }
+
+                $stmt->close();
             }
-             //$conn->close();
-             ?>
+
+            ?>
+
         </table>
          <br>
          <br>
@@ -103,41 +111,50 @@ if(isset($_SESSION['logging'])){
             <th>Delete</th>
             <?php
             require_once("connection.php");
-             echo"<br>";
-             if(isset($_POST['SSN'])){
-              $SSN = $_POST['SSN'];
-            $sql = " SELECT * FROM tblpatients WHERE SSN = '$SSN' ";
-             }
-            $result = $conn->query($sql);
+            echo "<br>";
 
-            if($result-> num_rows > 0){
-                    while($row = $result -> fetch_assoc()){
-                    echo "<tr>
-                    <td> $row[SSN]</td>  
-                    <td> $row[f_name] </td>
-                    <td> $row[l_name]</td>
-                    <td> $row[Phone_no]</td>
-                    <td> $row[Email]</td> 
-                    <td> $row[P_password]</td>
-                    <td> $row[Gender]</td>
-                    <td> $row[Age]</td>
-                    <td> $row[AssociateDoctor]</td>
-                    <td><a href = '/phptest/drug-dispensing-tool/ProjectForms/editpatients.php?SSN=$row[SSN]'> Edit </a> </td>
-                    <td><a href ='/phptest/drug-dispensing-tool/ProjectForms/deletepatients.php?SSN=$row[SSN]'>Delete</a></td>
-                     </tr>";
+            // Check if the form is submitted and SSN is set
+            if (isset($_POST['search']) && isset($_POST['SSN'])) {
+                $SSN = $_POST['SSN'];
+
+                // Use prepared statement to prevent SQL injection
+                $stmt = $conn->prepare("SELECT * FROM tblpatients WHERE SSN = ?");
+                $stmt->bind_param("s", $SSN);
+                $stmt->execute();
+                $result = $stmt->get_result();
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>
+                            <td> $row[SSN]</td>  
+                            <td> $row[f_name] </td>
+                            <td> $row[l_name]</td>
+                            <td> $row[Phone_no]</td>
+                            <td> $row[Email]</td> 
+                            <td> $row[P_password]</td>
+                            <td> $row[Gender]</td>
+                            <td> $row[Age]</td>
+                            <td> $row[AssociateDoctor]</td>
+                            <td><a href='/phptest/drug-dispensing-tool/ProjectForms/editpatients.php?SSN=$row[SSN]'> Edit </a> </td>
+                            <td><a href='/phptest/drug-dispensing-tool/ProjectForms/deletepatients.php?SSN=$row[SSN]'>Delete</a></td>
+                             </tr>";
                     }
-             }
-            else{
-             echo "No results";
+                } else {
+                    echo "No results";
+                }
+
+                $stmt->close();
             }
-             $conn->close();
-             ?>
+
+            $conn->close();
+            ?>
+
         </table>
     </body>
     </html>
 
 <?php
-}else{
+} else {
     header("Location: patientlogin.html");
 }
 ?>
