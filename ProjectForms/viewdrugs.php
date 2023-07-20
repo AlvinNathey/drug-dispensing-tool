@@ -19,8 +19,9 @@
     <body>
       <h3>This is the table for drugs<h3>
         <table id="patientstable">
-            <th>drug_name</th>
+        
             <th>drug_id</th>
+            <th>drug_name</th>
             <th>drug_quantity</th>
             <th>drug_price </th>
             <th>Edit</th>
@@ -34,9 +35,9 @@
 
             if($result-> num_rows > 0){
                     while($row = $result -> fetch_assoc()){
-                    echo "<tr>
-                    <td> $row[drug_name]</td>  
+                    echo "<tr> 
                     <td> $row[drug_id] </td>
+                    <td> $row[drug_name]</td>
                     <td> $row[drug_quantity]</td>
                     <td> $row[drug_price]</td>
                     <td><a href = '/phptest/drug-dispensing-tool/ProjectForms/editdrugs.php?drug_name=$row[drug_name]'> Edit </a> </td>
