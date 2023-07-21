@@ -134,6 +134,7 @@ if (isset($_SESSION['logging'])) {
                     <td> {$row2['drug_name']}</td>
                     <td> {$row2['drug_prize']}</td>
                     <td> {$row2['dosage']}</td>
+                    <td><button onclick='dispenseMedicine(\"{$row2['SSN']}\", \"{$row2['f_name']}\", \"{$row2['drug_name']}\", \"{$row2['drug_prize']}\")'>Dispense</button></td>
                     </tr>";
             }
         } else {
@@ -151,17 +152,22 @@ if (isset($_SESSION['logging'])) {
             // AJAX request to send the dispensing details to the server
             const xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function () {
-                if (xhr.readyState === XMLHttpRequest.DONE) {
-                    if (xhr.status === 200) {
-                        // The request was successful
-                        alert("Medicine dispensed for patient with SSN: " + SSN);
-                        window.location.reload(); // Reload the page to show updated data
-                    } else {
-                        // The request failed, handle the error
-                        alert("Failed to dispense medicine. Please try again later.");
-                    }
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    // The request was successful
+                    alert("Medicine dispensed for patient with SSN: " + SSN);
+                    window.location.reload(); // Reload the page to show updated data
+
+                    // Additional code to append the dispensed drug data to the "Dispensed Drugs History" table
+                    const dispensedDrugsTable = document.getElementById("patientstable");
+                    const newRow = dispensedDrugsTable.insertRow(-1);
+                    newRow.innerHTML = `<td>${SSN}</td><td>${f_name}</td><td>${drug_name}</td><td>${drug_prize}</td>`;
+                } else {
+                    // The request failed, handle the error
+                    alert("Failed to dispense medicine. Please try again later.");
                 }
-            };
+            }
+        };
 
             xhr.open("POST", "dispensedrug.php", true);
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
