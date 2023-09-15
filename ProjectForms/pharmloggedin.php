@@ -8,6 +8,9 @@ if (isset($_SESSION['logging'])) {
 <html>
 <head>
     <style>
+        body{
+            background-color: navajowhite;
+        }
          .welcome {
             position: absolute;
             top: 0;
@@ -63,7 +66,7 @@ if (isset($_SESSION['logging'])) {
     <p>For prescriptions:</p>
     <table>
             <th>SSN</th>
-            <th>f_name</th>
+            <th>f name</th>
             <th>diagnosis</th>
             <th>drug name</th>
             <th>drug price</th>
@@ -107,10 +110,10 @@ if (isset($_SESSION['logging'])) {
     <h3>This is all the patient's prescription</h3>
     <table id="patientstable">
         <th>SSN</th>
-        <th>patient_fname</th>
+        <th>patient fname</th>
         <th>diagnosis</th>
-        <th>drug_name</th>
-        <th>drug_prize</th>
+        <th>drug name</th>
+        <th>drug prize</th>
         <th>dosage</th>
         <th>Dispense</th>
         <?php

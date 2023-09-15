@@ -57,29 +57,73 @@ $doc_password = "";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doctor login</title>
+    <title>Doctor Edit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: peachpuff;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-
-    <h1>Doctor Signup</h1>
+    <h1>Edit Doctor Information</h1>
     <form method="post" action="">
-        <label for="doc_id">Doctor id</label>
-            <input type="text" name= "doc_id" id="doc_id" maxlength="5" required value="<?php echo $doc_id?>">
-            <br>
-            <br>
-           <label for="doc_fname">First name</label>
-            <input type="text" name="doc_fname" id="doc_fname" maxlength="20" required value="<?php echo $doc_fname?>" >
-            <br>
-            <br>
-            <label for="doc_lname">Last name</label>
-            <input type="text" name="doc_lname" id="doc_lname" maxlength="20" required value="<?php echo $doc_lname?>">
-            <br>
-            <br>
-            <label for="doc_password">Password</label>
-            <input type="password" name= "doc_password"id="doc_password" maxlength="20" required value="<?php echo $doc_password?>">
-            <br>
-            <br>
-            <input type="submit" value="edit">
+        <label for="doc_id">Doctor ID</label>
+        <input type="text" name="doc_id" id="doc_id" maxlength="5" required value="<?php echo $doc_id ?>">
+        <br><br>
+        <label for="doc_fname">First Name</label>
+        <input type="text" name="doc_fname" id="doc_fname" maxlength="20" required value="<?php echo $doc_fname ?>">
+        <br><br>
+        <label for="doc_lname">Last Name</label>
+        <input type="text" name="doc_lname" id="doc_lname" maxlength="20" required value="<?php echo $doc_lname ?>">
+        <br><br>
+        <label for="doc_password">Password</label>
+        <input type="password" name="doc_password" id="doc_password" maxlength="20" required value="<?php echo $doc_password ?>">
+        <br><br>
+        <input type="submit" value="Edit">
     </form>
 </body>
 </html>
