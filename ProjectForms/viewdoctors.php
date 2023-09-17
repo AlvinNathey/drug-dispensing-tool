@@ -131,5 +131,10 @@
     </table>
   </div>
   <script type='text/javascript' src="pagination.js"></script>
+  
+  <div style="text-align: center; margin-top: 20px;">
+  <a href="adminloggedin.php" style="background-color: #007bff; color: #fff; padding: 10px 20px; text-decoration: none; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Go Back</a>
+</div>
+
 </body>
 </html>

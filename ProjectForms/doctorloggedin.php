@@ -107,6 +107,9 @@ if(isset($_SESSION['logging'])){
             <input type="submit" value="Submit Prescription">
         </form>
     </div>
+  <!-- Logout button -->
+<a href="doctorlogout.php" style="display: block; background-color: #007bff; color: #fff; padding: 10px 20px; text-decoration: none; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; position: relative; bottom: 0; left: 0;">Logout</a>
+
 </body>
 </html>
 
