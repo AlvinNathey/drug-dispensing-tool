@@ -33,8 +33,33 @@ if (isset($_SESSION['logging'])) {
         }
     </style>
     <title>Pharmacist Logged In</title>
+
+    <script>
+    // Function to display the success message and hide it after a set time
+    function showSuccessMessage() {
+      var successMessage = document.getElementById("success-message");
+      successMessage.style.display = "block";
+      
+      // Set a timeout to hide the message after 5 seconds (5000 milliseconds)
+      setTimeout(function() {
+        successMessage.style.display = "none";
+      }, 2000);
+    }
+  </script>
+
 </head>
 <body>
+
+<!-- Success message container -->
+<div id="success-message" style="display: none; background-color: #4CAF50; color: white; text-align: center; padding: 10px;">
+    Pharmacist successfully registered
+  </div>
+
+  <!-- Call the function to show the success message -->
+  <script>
+    showSuccessMessage();
+  </script>
+
     <div class="welcome">
         <h3>Welcome Pharmacist, <?php echo $_SESSION["pharmacist_fname"]; ?></h3>
     </div>

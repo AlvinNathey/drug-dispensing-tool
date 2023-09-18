@@ -76,8 +76,33 @@ if(isset($_SESSION['logging'])){
             background-color: #0056b3;
         }
     </style>
+
+<script>
+    // Function to display the success message and hide it after a set time
+    function showSuccessMessage() {
+      var successMessage = document.getElementById("success-message");
+      successMessage.style.display = "block";
+      
+      // Set a timeout to hide the message after 5 seconds (5000 milliseconds)
+      setTimeout(function() {
+        successMessage.style.display = "none";
+      }, 2000);
+    }
+  </script>
+
 </head>
 <body>
+
+<!-- Success message container -->
+<div id="success-message" style="display: none; background-color: #4CAF50; color: white; text-align: center; padding: 10px;">
+    Doctor successfully registered
+  </div>
+
+  <!-- Call the function to show the success message -->
+  <script>
+    showSuccessMessage();
+  </script>
+
     <div class="welcome">
         <h3>Welcome Dr, <?php echo $_SESSION["doc_fname"] ; ?></h3>
     </div>
@@ -88,7 +113,6 @@ if(isset($_SESSION['logging'])){
             <label for="SSN">SSN</label>
             <input type="text" name="SSN" id="SSN" maxlength="10" required>
             <br>
-            <h3>Enter the Patient's First Name</h3>
             <label for="f_name">First name</label>
             <input type="text" name="f_name" id="f_name" maxlength="20" required>
             <br><br>
@@ -108,7 +132,7 @@ if(isset($_SESSION['logging'])){
         </form>
     </div>
   <!-- Logout button -->
-<a href="doctorlogout.php" style="display: block; background-color: #007bff; color: #fff; padding: 10px 20px; text-decoration: none; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; position: relative; bottom: 0; left: 0;">Logout</a>
+<a href="doctorlogout.php" style="display: block; background-color:red; color: #fff; padding: 10px 20px; text-decoration: none; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; position: relative; bottom: 0; left: 0;">Logout</a>
 
 </body>
 </html>
