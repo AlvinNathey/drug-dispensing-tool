@@ -9,12 +9,15 @@ if (isset($_GET["cat"])) {
     if ($cat == "Analgesics") {
         $pageTitle = "Analgesics";
         $section = "Analgesics";
+
     } else if ($cat == "Anesthetics") {
         $pageTitle = "Anesthetics";
         $section = "Anesthetics";
-    } else if ($cat == "Anticogulants") {
+
+    } else if ($cat == "Anticoagulants") {
         $pageTitle = "Anti coagulants";
-        $section = "Anticogulants";
+        $section = "Anticoagulants";
+
     } else if ($cat == "Antibiotics") {
         $pageTitle = "Anti biotics";
         $section = "Antibiotics";

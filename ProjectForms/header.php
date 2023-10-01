@@ -16,8 +16,8 @@
                 <li class="Analgesics <?php if($section == "Analgesics"){echo "on";} ?>">
 				  <a href="catalog.php?cat=Analgesics">Analgesics</a></li>
 
-                <li class="Anesthetics <?php if($section == "Anesthetics"){echo  "on";} ?>">
-				  <a href="catalog.php?cat=Anasthetics">Anesthetics</a></li>
+                <li class="Anesthetics <?php if($section == "Anesthetics"){echo "on";} ?>">
+                    <a href="catalog.php?cat=Anesthetics">Anesthetics</a></li>
 
                 <li class="Anticoagulants <?php if($section == "Anticoagulants"){echo  "on";} ?>">
 				  <a href="catalog.php?cat=Anticoagulants">Anti coagulants</a></li>
