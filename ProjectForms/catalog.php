@@ -1,5 +1,5 @@
 <?php 
-$pageTitle = "All Drugs";
+$pageTitle = "MyDrugDispenser";
 $section = null;
 include('data.php');
 include('functions.php');

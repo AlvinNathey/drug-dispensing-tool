@@ -12,7 +12,7 @@ if(isset($_GET["id"])){
 $pageTitle = $item["title"];
 include ('detailsheader.php');
 ?>
-<link rel="stylesheet" type="text/css" href="edit.css">
+<link rel="stylesheet"  href="edit.css">
 <div class = "section page">
     <div class = "wrapper">
         <div class = "media-picture">

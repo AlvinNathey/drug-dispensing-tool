@@ -9,7 +9,9 @@
 <body>
     <header class="box0">
       <div id="header-desc">
-          <img class= "logo" src="logoremoved.png">
+      <a href="catalog.php?cat=Analgesics">
+    <img class="logo" src="logoremoved.png">
+</a>
             <h1> MyDispenser</h1>
 
             <ul class="nav">

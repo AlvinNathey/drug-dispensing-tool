@@ -77,6 +77,12 @@ if (isset($_SESSION['logging'])) {
             window.location.href = "viewdrugs.php";
         }
     </script>
+    <input type="submit" value="View drugs by category" class="doctorbutton" onclick="redirectToViewDrugsByCategory()">
+    <script>
+        function redirectToViewDrugsByCategory() {
+            window.location.href = "catalog.php?cat=Analgesics";
+        }
+    </script>
 
     <p>Enter your SSN</p>
     <form method="post" action="">
@@ -241,6 +247,7 @@ if (isset($_SESSION['logging'])) {
     </table>
 <!-- Logout button -->
 <a href="pharmlogout.php" style="display: block; background-color: #007bff; color: #fff; padding: 10px 20px; text-decoration: none; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; position: relative; bottom: 0; left: 0;">Logout</a>
+
 
 </body>
 </html>

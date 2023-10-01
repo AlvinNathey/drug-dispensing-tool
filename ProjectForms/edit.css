@@ -179,7 +179,14 @@
  /*
   * Addresses styling not present in S5, Chrome.
   */
- 
+ .logo{
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    width:20%;
+    height: 28%
+
+ }
  dfn {
      font-style: italic;
  }
