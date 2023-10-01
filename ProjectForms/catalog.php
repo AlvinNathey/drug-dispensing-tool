@@ -6,18 +6,18 @@ include('functions.php');
 
 if (isset($_GET["cat"])) {
     $cat = $_GET["cat"];
-    if ($cat == "drug1") {
+    if ($cat == "Analgesics") {
         $pageTitle = "Analgesics";
-        $section = "drug1";
-    } else if ($cat == "drug2") {
+        $section = "Analgesics";
+    } else if ($cat == "Anesthetics") {
         $pageTitle = "Anesthetics";
-        $section = "drug2";
-    } else if ($cat == "drug3") {
+        $section = "Anesthetics";
+    } else if ($cat == "Anticogulants") {
         $pageTitle = "Anti coagulants";
-        $section = "drug3";
-    } else if ($cat == "drug4") {
+        $section = "Anticogulants";
+    } else if ($cat == "Antibiotics") {
         $pageTitle = "Anti biotics";
-        $section = "drug4";
+        $section = "Antibiotics";
     }
 }
 

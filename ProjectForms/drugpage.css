@@ -95,10 +95,10 @@ header .nav li a {
 }
 header .nav li.on a {text-decoration:underline;}
 header .nav li a:hover, .header .nav li a:active {opacity: 0.7;}
-header .nav li.drug1 a {margin-left: 500px;}
-header .nav li.drug2 a {margin-left: 30px ;}
-header .nav li.drug3 a {margin-left: 50px ;}
-header .nav li.drug4 a {margin-left: 80px;}
+header .nav li.Analgesics a {margin-left: 500px;}
+header .nav li.Anesthetics a {margin-left: 30px ;}
+header .nav li.Anticoagulants a {margin-left: 50px ;}
+header .nav li.Antibiotics a {margin-left: 80px;}
 .section.catalog {padding-bottom: 42px;}
 .section.catalog h2 {
   font-size: 24px;

@@ -13,17 +13,17 @@
             <h1> MyDispenser</h1>
 
             <ul class="nav">
-                <li class="drug1 <?php if($section == "drug1"){echo "on";} ?>">
-				  <a href="catalog.php?cat=drug1">Analgesics</a></li>
+                <li class="Analgesics <?php if($section == "Analgesics"){echo "on";} ?>">
+				  <a href="catalog.php?cat=Analgesics">Analgesics</a></li>
 
-                <li class="drug2 <?php if($section == "drug2"){echo  "on";} ?>">
-				  <a href="catalog.php?cat=drug2">Anesthetics</a></li>
+                <li class="Anesthetics <?php if($section == "Anesthetics"){echo  "on";} ?>">
+				  <a href="catalog.php?cat=Anasthetics">Anesthetics</a></li>
 
-                <li class="drug3 <?php if($section == "drug3"){echo  "on";} ?>">
-				  <a href="catalog.php?cat=drug3">Anti coagulants</a></li>
+                <li class="Anticoagulants <?php if($section == "Anticoagulants"){echo  "on";} ?>">
+				  <a href="catalog.php?cat=Anticoagulants">Anti coagulants</a></li>
 
-                <li class="drug4 <?php if($section == "drug4"){echo "on";}?>">
-				  <a href="catalog.php?cat=drug4">Anti biotics</a></li>
+                <li class="Antibiotics <?php if($section == "Antibiotics"){echo "on";}?>">
+				  <a href="catalog.php?cat=Antibiotics">Anti biotics</a></li>
             </ul>
       </div>       
     </header>

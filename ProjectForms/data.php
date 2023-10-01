@@ -1,12 +1,12 @@
 <?php
 $catalog = [];
-//drug1
+//analgesics
 $catalog[101] = [
 	"drug_id" => "001",
     "title" => "Asprin",
     "drug_quantity" => "100mg",
     "drug_price" => 10,
-    "category" => "drug1",
+    "category" => "Analgesics",
     "img" => "../drugPics/analgesics/asprin.jpg",
 ];
 $catalog[102] = [
@@ -14,7 +14,7 @@ $catalog[102] = [
     "title" => "Ibuprofen",
     "drug_quantity" => "100mg",
     "drug_price" => 10,
-    "category" => "drug1",
+    "category" => "Analgesics",
     "img" => "../drugPics/analgesics/ibuprofen.jpg",
 ];
 $catalog[103] = [
@@ -22,7 +22,7 @@ $catalog[103] = [
     "title" => "Naproxen",
     "drug_quantity" => "100mg",
     "drug_price" => 50,
-    "category" => "drug1",
+    "category" => "Analgesics",
     "img" => "../drugPics/analgesics/naproxen.jpg",
 ];
 $catalog[104] = [
@@ -30,17 +30,17 @@ $catalog[104] = [
     "title" => "Tylenol",
     "drug_quantity" => "100mg",
     "drug_price" => 50,
-    "category" => "drug1",
+    "category" => "Analgesics",
     "img" => "../drugPics/analgesics/tylenol.jpg"
 ];
 
-//drug2
+//anesthetics
 $catalog[201] = [
 	"drug_id" => "005",
     "title" => "Bupivacaine",
     "drug_quantity" => "50ml",
     "drug_price" => 50,
-    "category" => "drug2",
+    "category" => "Anesthetics",
 	"img" => "../drugPics/anesthetics/bupivacaine.jpg",
 ];
 $catalog[202] = [
@@ -48,7 +48,7 @@ $catalog[202] = [
     "title" => "Lidocaine",
     "drug_quantity" => "50ml",
     "drug_price" => 50,
-    "category" => "drug2",
+    "category" => "Anesthetics",
     "img" => "../drugPics/anesthetics/lidocaine.jpg",
 ];
 $catalog[203] = [
@@ -56,7 +56,7 @@ $catalog[203] = [
     "title" => "Propofol",
     "drug_quantity" => "50ml",
     "drug_price" => 50,
-    "category" => "drug2",
+    "category" => "Anesthetics",
     "img" => "../drugPics/anesthetics/propofol.jpg",
 ];
 $catalog[204] = [
@@ -64,17 +64,17 @@ $catalog[204] = [
     "title" => "Sevoflurane",
     "drug_quantity" => "50ml",
     "drug_price" => 50,
-    "category" => "drug2",
+    "category" => "Anesthetics",
     "img" => "../drugPics/anesthetics/sevoflurane.jpg",
 ];
 
-//drug3
+//anticogulants
 $catalog[301] = [
 	"drug_id" => "009",
     "title" => "Coumadin",
     "drug_quantity" => "50ml",
     "drug_price" => 50,
-    "category" => "drug3",
+    "category" => "Anticoagulants",
 	"img" => "../drugPics/anticoagulants/coumadin.jpg",  
 ];
 $catalog[302] = [
@@ -82,7 +82,7 @@ $catalog[302] = [
     "title" => "Heparin",
     "drug_quantity" => "50ml",
     "drug_price" => 50,
-    "category" => "drug3",
+    "category" => "Anticoagulants",
     "img" => "../drugPics/anticoagulants/heparin.jpeg",
 ];
 $catalog[303] = [
@@ -90,7 +90,7 @@ $catalog[303] = [
     "title" => "Lixiana",
     "drug_quantity" => "60mg",
     "drug_price" => 50,
-    "category" => "drug3",
+    "category" => "Anticoagulants",
     "img" => "../drugPics/anticoagulants/lixiana.jpg",
 ];
 $catalog[304] = [
@@ -98,17 +98,17 @@ $catalog[304] = [
     "title" => "Xarelto",
     "drug_quantity" => "20mg",
     "drug_price" => 50,
-    "category" => "drug3",
+    "category" => "Anticoagulants",
     "img" => "../drugPics/anticoagulants/xarelto.jpg",
 ];
 
-//drug4
+//antibiotics
 $catalog[401] = [
 	"drug_id" => "013",
     "title" => "Amoxicillin",
     "drug_quantity" => "250mg",
     "drug_price" => 50,
-    "category" => "drug4",
+    "category" => "Antibiotics",
 	"img" => "../drugPics/antibiotics/amoxicillin.jpg",
 ];
 $catalog[402] = [
@@ -116,7 +116,7 @@ $catalog[402] = [
     "title" => "Azithromycin",
     "drug_quantity" => "500mg",
     "drug_price" => 50,
-    "category" => "drug4",
+    "category" => "Antibiotics",
     "img" => "../drugPics/antibiotics/azithromycin.jpg",
 ];
 $catalog[403] = [
@@ -124,7 +124,7 @@ $catalog[403] = [
     "title" => "Cephalexin",
     "drug_quantity" => "500mg",
     "drug_price" => 50,
-    "category" => "drug4",
+    "category" => "Antibiotics",
     "img" => "../drugPics/antibiotics/cephalexin.jpg",
 ];
 $catalog[404] = [
@@ -132,6 +132,6 @@ $catalog[404] = [
     "title" => "Ciprofloxacin",
     "drug_quantity" => "500mg",
     "drug_price" => 50,
-    "category" => "drug4",
+    "category" => "Antibiotics",
     "img" => "../drugPics/antibiotics/ciprofloxacin.jpg",
 ];
