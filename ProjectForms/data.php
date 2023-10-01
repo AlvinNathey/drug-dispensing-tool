@@ -1,241 +1,137 @@
 <?php
 $catalog = [];
-//Books
+//drug1
 $catalog[101] = [
-	"title" => "A Design Patterns: Elements of Reusable Object-Oriented Software",
-	"img" => "../drugPics/analgesics/asprin.jpg",
-    "genre" => "Tech",
-    "format" => "Paperback",
-    "year" => 1994,
+	"drug_id" => "001",
+    "title" => "Asprin",
+    "drug_quantity" => "100mg",
+    "drug_price" => 10,
     "category" => "drug1",
-    "authors" => [
-        "Erich Gamma",
-        "Richard Helm",
-        "Ralph Johnson",
-        "John Vlissides"
-    ],
-    "publisher" => "Prentice Hall",
-    "isbn" => '978-0201633610'
+    "img" => "../drugPics/analgesics/asprin.jpg",
 ];
 $catalog[102] = [
-    "title" => "Clean Code: A Handbook of Agile Software Craftsmanship",
-    "img" => "../drugPics/analgesics/ibuprofen.jpg",
-    "genre" => "Tech",
-    "format" => "Ebook",
-    "year" => 2008,
+    "drug_id" => "002",
+    "title" => "Ibuprofen",
+    "drug_quantity" => "100mg",
+    "drug_price" => 10,
     "category" => "drug1",
-    "authors" => [
-        "Robert C. Martin"
-    ],
-    "publisher" => "Prentice Hall",
-    "isbn" => '978-0132350884'
+    "img" => "../drugPics/analgesics/ibuprofen.jpg",
 ];
 $catalog[103] = [
-    "title" => "Refactoring: Improving the Design of Existing Code",
-    "img" => "../drugPics/analgesics/naproxen.jpg",
-    "genre" => "Tech",
-    "format" => "Hardcover",
-    "year" => 1999,
+    "drug_id" => "003",
+    "title" => "Naproxen",
+    "drug_quantity" => "100mg",
+    "drug_price" => 50,
     "category" => "drug1",
-    "authors" => [
-        "Martin Fowler",
-        "Kent Beck",
-        "John Brant",
-        "William Opdyke",
-        "Don Roberts"
-    ],
-    "publisher" => "Addison-Wesley Professional",
-    "isbn" => '978-0201485677'
+    "img" => "../drugPics/analgesics/naproxen.jpg",
 ];
 $catalog[104] = [
-    "title" => "The Clean Coder: A Code of Conduct for Professional Programmers",
-    "img" => "../drugPics/analgesics/tylenol.jpg",
-    "genre" => "Tech",
-    "format" => "Audio",
-    "year" => 2011,
+    "drug_id" => "004",
+    "title" => "Tylenol",
+    "drug_quantity" => "100mg",
+    "drug_price" => 50,
     "category" => "drug1",
-    "authors" => [
-        "Robert C. Martin"
-    ],
-    "publisher" => "Prentice Hall",
-    "isbn" => '007-6092046981'
+    "img" => "../drugPics/analgesics/tylenol.jpg"
 ];
+
+//drug2
 $catalog[201] = [
-	"title" => "A Design Patterns: Elements of Reusable Object-Oriented Software",
-	"img" => "../drugPics/anesthetics/bupivacaine.jpg",
-    "genre" => "Tech",
-    "format" => "Paperback",
-    "year" => 1994,
+	"drug_id" => "005",
+    "title" => "Bupivacaine",
+    "drug_quantity" => "50ml",
+    "drug_price" => 50,
     "category" => "drug2",
-    "authors" => [
-        "Erich Gamma",
-        "Richard Helm",
-        "Ralph Johnson",
-        "John Vlissides"
-    ],
-    "publisher" => "Prentice Hall",
-    "isbn" => '978-0201633610'
+	"img" => "../drugPics/anesthetics/bupivacaine.jpg",
 ];
 $catalog[202] = [
-    "title" => "Clean Code: A Handbook of Agile Software Craftsmanship",
-    "img" => "../drugPics/anesthetics/lidocaine.jpg",
-    "genre" => "Tech",
-    "format" => "Ebook",
-    "year" => 2008,
+    "drug_id" => "006",
+    "title" => "Lidocaine",
+    "drug_quantity" => "50ml",
+    "drug_price" => 50,
     "category" => "drug2",
-    "authors" => [
-        "Robert C. Martin"
-    ],
-    "publisher" => "Prentice Hall",
-    "isbn" => '978-0132350884'
+    "img" => "../drugPics/anesthetics/lidocaine.jpg",
 ];
 $catalog[203] = [
-    "title" => "Refactoring: Improving the Design of Existing Code",
-    "img" => "../drugPics/anesthetics/propofol.jpg",
-    "genre" => "Tech",
-    "format" => "Hardcover",
-    "year" => 1999,
+    "drug_id" => "007",
+    "title" => "Propofol",
+    "drug_quantity" => "50ml",
+    "drug_price" => 50,
     "category" => "drug2",
-    "authors" => [
-        "Martin Fowler",
-        "Kent Beck",
-        "John Brant",
-        "William Opdyke",
-        "Don Roberts"
-    ],
-    "publisher" => "Addison-Wesley Professional",
-    "isbn" => '978-0201485677'
+    "img" => "../drugPics/anesthetics/propofol.jpg",
 ];
 $catalog[204] = [
-    "title" => "The Clean Coder: A Code of Conduct for Professional Programmers",
-    "img" => "../drugPics/anesthetics/sevoflurane.jpg",
-    "genre" => "Tech",
-    "format" => "Audio",
-    "year" => 2011,
+    "drug_id" => "008",
+    "title" => "Sevoflurane",
+    "drug_quantity" => "50ml",
+    "drug_price" => 50,
     "category" => "drug2",
-    "authors" => [
-        "Robert C. Martin"
-    ],
-    "publisher" => "Prentice Hall",
-    "isbn" => '007-6092046981'
+    "img" => "../drugPics/anesthetics/sevoflurane.jpg",
 ];
+
+//drug3
 $catalog[301] = [
-	"title" => "A Design Patterns: Elements of Reusable Object-Oriented Software",
-	"img" => "../drugPics/anticoagulants/coumadin.jpg",
-    "genre" => "Tech",
-    "format" => "Paperback",
-    "year" => 1994,
+	"drug_id" => "009",
+    "title" => "Coumadin",
+    "drug_quantity" => "50ml",
+    "drug_price" => 50,
     "category" => "drug3",
-    "authors" => [
-        "Erich Gamma",
-        "Richard Helm",
-        "Ralph Johnson",
-        "John Vlissides"
-    ],
-    "publisher" => "Prentice Hall",
-    "isbn" => '978-0201633610'
+	"img" => "../drugPics/anticoagulants/coumadin.jpg",  
 ];
 $catalog[302] = [
-    "title" => "Clean Code: A Handbook of Agile Software Craftsmanship",
-    "img" => "../drugPics/anticoagulants/heparin.jpeg",
-    "genre" => "Tech",
-    "format" => "Ebook",
-    "year" => 2008,
+    "drug_id" => "010",
+    "title" => "Heparin",
+    "drug_quantity" => "50ml",
+    "drug_price" => 50,
     "category" => "drug3",
-    "authors" => [
-        "Robert C. Martin"
-    ],
-    "publisher" => "Prentice Hall",
-    "isbn" => '978-0132350884'
+    "img" => "../drugPics/anticoagulants/heparin.jpeg",
 ];
 $catalog[303] = [
-    "title" => "Refactoring: Improving the Design of Existing Code",
-    "img" => "../drugPics/anticoagulants/lixiana.jpg",
-    "genre" => "Tech",
-    "format" => "Hardcover",
-    "year" => 1999,
+    "drug_id" => "011",
+    "title" => "Lixiana",
+    "drug_quantity" => "60mg",
+    "drug_price" => 50,
     "category" => "drug3",
-    "authors" => [
-        "Martin Fowler",
-        "Kent Beck",
-        "John Brant",
-        "William Opdyke",
-        "Don Roberts"
-    ],
-    "publisher" => "Addison-Wesley Professional",
-    "isbn" => '978-0201485677'
+    "img" => "../drugPics/anticoagulants/lixiana.jpg",
 ];
 $catalog[304] = [
-    "title" => "The Clean Coder: A Code of Conduct for Professional Programmers",
-    "img" => "../drugPics/anticoagulants/xarelto.jpg",
-    "genre" => "Tech",
-    "format" => "Audio",
-    "year" => 2011,
+    "drug_id" => "012",
+    "title" => "Xarelto",
+    "drug_quantity" => "20mg",
+    "drug_price" => 50,
     "category" => "drug3",
-    "authors" => [
-        "Robert C. Martin"
-    ],
-    "publisher" => "Prentice Hall",
-    "isbn" => '007-6092046981'
+    "img" => "../drugPics/anticoagulants/xarelto.jpg",
 ];
 
-
+//drug4
 $catalog[401] = [
-	"title" => "A Design Patterns: Elements of Reusable Object-Oriented Software",
-	"img" => "../drugPics/antibiotics/amoxicillin.jpg",
-    "genre" => "Tech",
-    "format" => "Paperback",
-    "year" => 1994,
+	"drug_id" => "013",
+    "title" => "Amoxicillin",
+    "drug_quantity" => "250mg",
+    "drug_price" => 50,
     "category" => "drug4",
-    "authors" => [
-        "Erich Gamma",
-        "Richard Helm",
-        "Ralph Johnson",
-        "John Vlissides"
-    ],
-    "publisher" => "Prentice Hall",
-    "isbn" => '978-0201633610'
+	"img" => "../drugPics/antibiotics/amoxicillin.jpg",
 ];
 $catalog[402] = [
-    "title" => "Clean Code: A Handbook of Agile Software Craftsmanship",
-    "img" => "../drugPics/antibiotics/azithromycin.jpg",
-    "genre" => "Tech",
-    "format" => "Ebook",
-    "year" => 2008,
+    "drug_id" => "014",
+    "title" => "Azithromycin",
+    "drug_quantity" => "500mg",
+    "drug_price" => 50,
     "category" => "drug4",
-    "authors" => [
-        "Robert C. Martin"
-    ],
-    "publisher" => "Prentice Hall",
-    "isbn" => '978-0132350884'
+    "img" => "../drugPics/antibiotics/azithromycin.jpg",
 ];
 $catalog[403] = [
-    "title" => "Refactoring: Improving the Design of Existing Code",
-    "img" => "../drugPics/antibiotics/cephalexin.jpg",
-    "genre" => "Tech",
-    "format" => "Hardcover",
-    "year" => 1999,
+    "drug_id" => "015",
+    "title" => "Cephalexin",
+    "drug_quantity" => "500mg",
+    "drug_price" => 50,
     "category" => "drug4",
-    "authors" => [
-        "Martin Fowler",
-        "Kent Beck",
-        "John Brant",
-        "William Opdyke",
-        "Don Roberts"
-    ],
-    "publisher" => "Addison-Wesley Professional",
-    "isbn" => '978-0201485677'
+    "img" => "../drugPics/antibiotics/cephalexin.jpg",
 ];
 $catalog[404] = [
-    "title" => "The Clean Coder: A Code of Conduct for Professional Programmers",
-    "img" => "../drugPics/antibiotics/ciprofloxacin.jpg",
-    "genre" => "Tech",
-    "format" => "Audio",
-    "year" => 2011,
+    "drug_id" => "016",
+    "title" => "Ciprofloxacin",
+    "drug_quantity" => "500mg",
+    "drug_price" => 50,
     "category" => "drug4",
-    "authors" => [
-        "Robert C. Martin"
-    ],
-    "publisher" => "Prentice Hall",
-    "isbn" => '007-6092046981'
+    "img" => "../drugPics/antibiotics/ciprofloxacin.jpg",
 ];
