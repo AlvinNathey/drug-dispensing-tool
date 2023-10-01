@@ -27,6 +27,7 @@ if (isset($_GET["cat"])) {
 
 include 'header.php';?>
 
+
 <div class="section catalog page">
     <div class="wrapper">
     <h2><?php echo $pageTitle;?></h2>
@@ -39,6 +40,9 @@ include 'header.php';?>
             }
             ?>
         </ul>
+        <form action="pharmloggedin.php" method="GET">
+    <button type="submit">Go Back to pharmloggedin</button>
+</form>
     </div>
-
+    
 <?php include 'footer.php';?>
