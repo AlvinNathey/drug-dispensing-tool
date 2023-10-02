@@ -116,7 +116,7 @@
                 <td> $row[drug_quantity]</td>
                 <td> $row[drug_price]</td>
                 <td> $row[drug_category]</td>
-                <td> $row[drug_photo]</td>
+                <td><img src='$row[drug_photo]'></td>
                 <td><button class='edit-button'><a href='/phptest/drug-dispensing-tool/ProjectForms/editdrugs.php?drug_name=$row[drug_name]'>Edit</a></td>
                 <td><button class='delete-button'><a href='/phptest/drug-dispensing-tool/ProjectForms/deletedrugs.php?drug_name=$row[drug_name]'>Delete</a></td>
                 </tr>";
