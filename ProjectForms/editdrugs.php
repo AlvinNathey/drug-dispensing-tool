@@ -4,6 +4,7 @@ $drug_name = "";
 $drug_id = "";
 $drug_quantity = "";
 $drug_price = "";
+$drug_category = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     if (!isset($_GET["drug_name"])) {
@@ -25,20 +26,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $drug_id = $row["drug_id"];
     $drug_quantity = $row["drug_quantity"];
     $drug_price = $row["drug_price"];
+    $drug_category = $row["drug_category"];
 } elseif (isset($_POST['drug_name'])) {
     $old_drug_name = $_GET["drug_name"]; // Keep the original drug_name for comparison
     $drug_name = $_POST["drug_name"];
     $drug_id = $_POST["drug_id"];
     $drug_quantity = $_POST["drug_quantity"];
     $drug_price = $_POST["drug_price"];
+    $drug_category = $_POST["drug_category"];
 
     // Sanitize the input to prevent SQL injection
     $drug_name = mysqli_real_escape_string($conn, $drug_name);
     $drug_id = mysqli_real_escape_string($conn, $drug_id);
     $drug_quantity = mysqli_real_escape_string($conn, $drug_quantity);
     $drug_price = mysqli_real_escape_string($conn, $drug_price);
+    $drug_category = mysqli_real_escape_string($conn, $drug_category);
 
-    if (empty($drug_name) || empty($drug_id) || empty($drug_quantity) || empty($drug_price)) {
+    if (empty($drug_name) || empty($drug_id) || empty($drug_quantity) || empty($drug_price) || empty($drug_category)) {
         echo "All fields are required ";
     } else {
         // Check if the new drug_name already exists in the database
@@ -50,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             echo "Drug name already exists. Please choose a different name.";
         } else {
             // Update the drug information including drug_name
-            $sql = "UPDATE tbldrugs SET drug_name ='$drug_name', drug_id ='$drug_id', drug_quantity='$drug_quantity', drug_price ='$drug_price' WHERE drug_name = '$old_drug_name' ";
+            $sql = "UPDATE tbldrugs SET drug_name ='$drug_name', drug_id ='$drug_id', drug_quantity='$drug_quantity', drug_price ='$drug_price', drug_category = '$drug_category' WHERE drug_name = '$old_drug_name' ";
 
             $result = mysqli_query($conn, $sql);
 
@@ -87,6 +91,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <br>
     <label for="drug_price">Price per unit</label>
     <input type="number" name="drug_price" id="drug_price" maxlength="20" required value="<?php echo $drug_price ?>">
+    <br>
+    <br>
+    <label for="drug_category">Category</label>
+    <input type="text" name="drug_category" id="drug_category" maxlength="20" required value="<?php echo $drug_category ?>">
     <br>
     <input type="submit" value="Submit">
 </form>

@@ -82,6 +82,15 @@ if(isset($_SESSION['logging'])){
     <input type="button" value="Doctor" class="action-button" onclick="redirectToDoctorView()">
     <input type="button" value="Patient" class="action-button" onclick="redirectToAdminView()">
     <input type="button" value="Pharmacist" class="action-button" onclick="redirectToPharmacistView()">
+    <input type="button" value="Drugs" class="action-button" onclick="redirectToDrugsView()">
+</div>
+
+<h2>What information do you want to add?</h2>
+<div class = "horizontal-buttons">
+    <input type="button" value="Add Doctor" class="action-button" onclick="redirectToAddDoctorView()">
+    <input type="button" value="Add Patient" class="action-button" onclick="redirectToAddPatientView()">
+    <input type="button" value="Add Pharmacist" class="action-button" onclick="redirectToAddPharmacistView()">
+    <input type="button" value="Drugs" class="action-button" onclick="redirectToAddDrugsView()">
 </div>
 
 <!-- Logout button -->
@@ -99,6 +108,25 @@ if(isset($_SESSION['logging'])){
     function redirectToPharmacistView() {
         window.location.href = "viewpharmacists.php";
     }
+    function redirectToDrugsView() {
+        window.location.href = "viewdrugsreplica.php";
+    }
+    ///
+    function redirectToAddDoctorView() {
+        window.location.href = "doctorsignup.html";
+    }
+
+    function redirectToAddPatientView() {
+        window.location.href = "patientsignup.html";
+    }
+
+    function redirectToAddPharmacistView() {
+        window.location.href = "pharmacistsignup.html";
+    }
+    function redirectToAddDrugsView() {
+        window.location.href = "inputDrugs.html";
+    }
+
 </script>
 </body>
 </html>
