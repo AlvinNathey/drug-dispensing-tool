@@ -65,6 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                 echo "Error updating drug information: " . mysqli_error($conn);
             }
         }
+        
     }
 }
 ?>
