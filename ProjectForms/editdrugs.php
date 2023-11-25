@@ -1,5 +1,6 @@
 <?php
 require_once("connection.php");
+
 $drug_name = "";
 $drug_id = "";
 $drug_quantity = "";
@@ -13,11 +14,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     }
 
     $drug_name = $_GET["drug_name"];
-    $sql = "SELECT * FROM tbldrugs WHERE drug_name = '$drug_name' ";
-    $result = mysqli_query($conn, $sql);
-    $row = $result->fetch_assoc();
+    $sql = "SELECT * FROM tbldrugs WHERE drug_name = ?";
+    
+    // Create a prepared statement
+    $stmt = mysqli_prepare($conn, $sql);
+    
+    // Bind the parameter
+    mysqli_stmt_bind_param($stmt, "s", $drug_name);
+    
+    // Execute the statement
+    mysqli_stmt_execute($stmt);
+    
+    // Get the result
+    $result = mysqli_stmt_get_result($stmt);
 
-    if (!$row) {
+    if ($row = mysqli_fetch_assoc($result)) {
+        $drug_name = $row["drug_name"];
+        $drug_id = $row["drug_id"];
+        $drug_quantity = $row["drug_quantity"];
+        $drug_price = $row["drug_price"];
+        $drug_category = $row["drug_category"];
+    } else {
         header("Location: viewdrugs.php");
         exit;
     }
@@ -26,7 +43,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $drug_id = $row["drug_id"];
     $drug_quantity = $row["drug_quantity"];
     $drug_price = $row["drug_price"];
-    $drug_category = $row["drug_category"];
 } elseif (isset($_POST['drug_name'])) {
     $old_drug_name = $_GET["drug_name"]; // Keep the original drug_name for comparison
     $drug_name = $_POST["drug_name"];
@@ -42,19 +58,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $drug_price = mysqli_real_escape_string($conn, $drug_price);
     $drug_category = mysqli_real_escape_string($conn, $drug_category);
 
-    if (empty($drug_name) || empty($drug_id) || empty($drug_quantity) || empty($drug_price) || empty($drug_category)) {
+    if (empty($drug_name) || empty($drug_id) || empty($drug_quantity) || empty($drug_price)) {
         echo "All fields are required ";
     } else {
         // Check if the new drug_name already exists in the database
-        $check_sql = "SELECT * FROM tbldrugs WHERE drug_name = '$drug_name'";
-        $check_result = mysqli_query($conn, $check_sql);
-        $existing_row = $check_result->fetch_assoc();
+        $check_sql = "SELECT * FROM tbldrugs WHERE drug_name = ?";
+        
+        // Create a prepared statement
+        $check_stmt = mysqli_prepare($conn, $check_sql);
+        
+        // Bind the parameter
+        mysqli_stmt_bind_param($check_stmt, "s", $drug_name);
+        
+        // Execute the statement
+        mysqli_stmt_execute($check_stmt);
+        
+        // Get the result
+        $existing_result = mysqli_stmt_get_result($check_stmt);
 
-        if ($existing_row && $drug_name !== $old_drug_name) {
+        if ($existing_row = mysqli_fetch_assoc($existing_result) && $drug_name !== $old_drug_name) {
             echo "Drug name already exists. Please choose a different name.";
         } else {
             // Update the drug information including drug_name
-            $sql = "UPDATE tbldrugs SET drug_name ='$drug_name', drug_id ='$drug_id', drug_quantity='$drug_quantity', drug_price ='$drug_price', drug_category = '$drug_category' WHERE drug_name = '$old_drug_name' ";
+            $sql = "UPDATE tbldrugs SET drug_name ='$drug_name', drug_id ='$drug_id', drug_quantity='$drug_quantity', drug_price ='$drug_price' WHERE drug_name = '$old_drug_name' ";
 
             $result = mysqli_query($conn, $sql);
 
@@ -80,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 </head>
 <body>
 <h1>Edit drugs</h1>
-<form method="post" action="">
+<form method="post">
     <label for="drug_name">Drug name</label>
     <input type="text" name="drug_name" id="drug_name" maxlength="100" required value="<?php echo $drug_name ?>">
     <br>
