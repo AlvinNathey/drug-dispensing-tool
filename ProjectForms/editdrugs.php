@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $drug_price = mysqli_real_escape_string($conn, $drug_price);
     $drug_category = mysqli_real_escape_string($conn, $drug_category);
 
-    if (empty($drug_name) || empty($drug_id) || empty($drug_quantity) || empty($drug_price)) {
+    if (empty($drug_name) || empty($drug_id) || empty($drug_quantity) || empty($drug_price) || empty($drug_category)) {
         echo "All fields are required ";
     } else {
         // Check if the new drug_name already exists in the database
