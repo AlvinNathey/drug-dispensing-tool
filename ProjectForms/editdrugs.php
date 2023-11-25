@@ -39,7 +39,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         exit;
     }
 
-} elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $drug_name = $row["drug_name"];
+    $drug_id = $row["drug_id"];
+    $drug_quantity = $row["drug_quantity"];
+    $drug_price = $row["drug_price"];
+} elseif (isset($_POST['drug_name'])) {
     $old_drug_name = $_GET["drug_name"]; // Keep the original drug_name for comparison
     $drug_name = $_POST["drug_name"];
     $drug_id = $_POST["drug_id"];
@@ -55,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $drug_category = mysqli_real_escape_string($conn, $drug_category);
 
     if (empty($drug_name) || empty($drug_id) || empty($drug_quantity) || empty($drug_price) || empty($drug_category)) {
-        echo "All fields are required";
+        echo "All fields are required ";
     } else {
         // Check if the new drug_name already exists in the database
         $check_sql = "SELECT * FROM tbldrugs WHERE drug_name = ?";
@@ -76,16 +80,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             echo "Drug name already exists. Please choose a different name.";
         } else {
             // Update the drug information including drug_name
-            $update_sql = "UPDATE tbldrugs SET drug_name = ?, drug_id = ?, drug_quantity = ?, drug_price = ?, drug_category = ? WHERE drug_name = ?";
-            
-            // Create a prepared statement
-            $update_stmt = mysqli_prepare($conn, $update_sql);
-            
-            // Bind the parameters
-            mysqli_stmt_bind_param($update_stmt, "ssssss", $drug_name, $drug_id, $drug_quantity, $drug_price, $drug_category, $old_drug_name);
-            
-            // Execute the statement
-            $result = mysqli_stmt_execute($update_stmt);
+            $sql = "UPDATE tbldrugs SET drug_name ='$drug_name', drug_id ='$drug_id', drug_quantity='$drug_quantity', drug_price ='$drug_price' WHERE drug_name = '$old_drug_name' ";
+
+            $result = mysqli_query($conn, $sql);
 
             if ($result) {
                 header('Location: viewdrugs.php');
@@ -94,6 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                 echo "Error updating drug information: " . mysqli_error($conn);
             }
         }
+        
     }
 }
 ?>
