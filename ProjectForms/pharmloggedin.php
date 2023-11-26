@@ -123,6 +123,7 @@ if (isset($_SESSION['logging'])) {
                         <td> {$row['diagnosis']}</td>
                         <td> {$row['drug_name']}</td>
                         <td> {$row['drug_prize']}</td>
+                        <td> {$row['date']}</td>
                         <td> {$row['dosage']}</td>
                         </tr>";
                 }
@@ -146,6 +147,7 @@ if (isset($_SESSION['logging'])) {
         <th>drug name</th>
         <th>drug prize</th>
         <th>dosage</th>
+        <th>date</th>
         <th>Dispense</th>
         <?php
         require_once("connection.php");
@@ -168,7 +170,8 @@ if (isset($_SESSION['logging'])) {
                     <td> {$row2['drug_name']}</td>
                     <td> {$row2['drug_prize']}</td>
                     <td> {$row2['dosage']}</td>
-                    <td><button onclick='dispenseMedicine(\"{$row2['SSN']}\", \"{$row2['f_name']}\", \"{$row2['drug_name']}\", \"{$row2['drug_prize']}\")'>Dispense</button></td>
+                    <td> {$row2['date']}</td>
+                    <td><button onclick='dispenseMedicine(\"{$row2['SSN']}\", \"{$row2['f_name']}\", \"{$row2['drug_name']}\", \"{$row2['drug_prize']}\", \"{$row2['date']}\")'>Dispense</button></td>
                     </tr>";
             }
         } else {
@@ -182,7 +185,7 @@ if (isset($_SESSION['logging'])) {
     <script type='text/javascript' src="pagination.js"></script>
 
     <script>
-        function dispenseMedicine(SSN, f_name, drug_name, drug_prize) {
+        function dispenseMedicine(SSN, f_name, drug_name, drug_prize, date) {
             // AJAX request to send the dispensing details to the server
             const xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function () {
@@ -195,7 +198,7 @@ if (isset($_SESSION['logging'])) {
                     // Additional code to append the dispensed drug data to the "Dispensed Drugs History" table
                     const dispensedDrugsTable = document.getElementById("patientstable");
                     const newRow = dispensedDrugsTable.insertRow(-1);
-                    newRow.innerHTML = `<td>${SSN}</td><td>${f_name}</td><td>${drug_name}</td><td>${drug_prize}</td>`;
+                    newRow.innerHTML = `<td>${SSN}</td><td>${f_name}</td><td>${drug_name}</td><td>${drug_prize}</td><td>${date}</td>`;
                 } else {
                     // The request failed, handle the error
                     alert("Failed to dispense medicine. Please try again later.");
@@ -205,7 +208,7 @@ if (isset($_SESSION['logging'])) {
 
             xhr.open("POST", "dispensedrug.php", true);
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhr.send("SSN=" + SSN + "&f_name=" + encodeURIComponent(f_name) + "&drug_name=" + encodeURIComponent(drug_name) + "&drug_prize=" + drug_prize);
+            xhr.send("SSN=" + SSN + "&f_name=" + encodeURIComponent(f_name) + "&drug_name=" + encodeURIComponent(drug_name) + "&drug_prize=" + drug_prize +"&date=" + date);
         }
     </script>
 
@@ -216,6 +219,7 @@ if (isset($_SESSION['logging'])) {
         <th>Patient Name</th>
         <th>Drug Name</th>
         <th>Drug Prize</th>
+        <th>Date</th>
 
         <?php
         require_once("connection.php");
@@ -236,6 +240,7 @@ if (isset($_SESSION['logging'])) {
                     <td> {$row2['f_name']} </td>
                     <td> {$row2['drug_name']}</td>
                     <td> {$row2['drug_prize']}</td>
+                    <td> {$row2['date']}</td>
                 </tr>";
             }
         } else {
