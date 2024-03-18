@@ -42,7 +42,7 @@ if(isset($_SESSION['logging'])){
             background-color: #0056b3; /* Darker color on hover */
         }
     </style>
-    <title>Admin logg</title>
+    <title>Admin logged in</title>
 
     <script>
     // Function to display the success message and hide it after a set time
@@ -94,7 +94,7 @@ if(isset($_SESSION['logging'])){
 </div>
 
 <!-- Logout button -->
-<a href="adminlogout.php" style="position: fixed; left: 10px; bottom: 10px; background-color: #007bff; color: #fff; padding: 10px 20px; text-decoration: none; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Logout</a>
+<a href="admin/adminlogout.php" style="position: fixed; left: 10px; bottom: 10px; background-color: #007bff; color: #fff; padding: 10px 20px; text-decoration: none; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Logout</a>
 
 <script>
     function redirectToDoctorView() {
