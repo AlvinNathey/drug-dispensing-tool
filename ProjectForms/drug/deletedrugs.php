@@ -11,6 +11,6 @@ if(isset ($_GET["drug_name"])){
 
 }
 
-header('location: viewdrugs.php');
+header('location: drug/viewdrugs.php');
 exit;
 ?>

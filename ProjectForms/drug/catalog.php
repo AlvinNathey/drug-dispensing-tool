@@ -1,7 +1,7 @@
 <?php 
 $pageTitle = "MyDrugDispenser";
 $section = null;
-include('data.php');
+include('drug/data.php');
 include('functions.php');
 
 if (isset($_GET["cat"])) {
@@ -25,7 +25,7 @@ if (isset($_GET["cat"])) {
 }
 
 
-include 'header.php';?>
+include 'body/header.php';?>
 
 
 <div class="section catalog page">
@@ -40,9 +40,9 @@ include 'header.php';?>
             }
             ?>
         </ul>
-        <form action="pharmloggedin.php" method="GET">
+        <form action="pharmacist/pharmloggedin.php" method="GET">
     <button type="submit">Go Back to pharmloggedin</button>
 </form>
     </div>
     
-<?php include 'footer.php';?>
+<?php include 'body/footer.php';?>
