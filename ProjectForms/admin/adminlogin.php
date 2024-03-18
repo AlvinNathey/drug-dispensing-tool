@@ -3,7 +3,7 @@ session_start();
 if(isset($_SESSION['logging']) && $_SESSION['logging'] === true){
 
 }
-require_once("connection.php");
+require_once("../connection.php");
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(isset($_POST['admin_id'])  && isset($_POST['admin_fname']) && isset($_POST['admin_password'])){
         function validate($data){
@@ -37,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $_SESSION['admin_id'] = $row['admin_id'];
                     $_SESSION['admin_fname'] = $row['admin_fname'];
                     $_SESSION['admin_password'] = $row['admin_password'];
-                    header("location: admin/adminloggedin.php");
+                    header("location: ../admin/adminloggedin.php");
                     exit();
                 }else{
                     header("Incorrect username or password");

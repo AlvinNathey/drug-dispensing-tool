@@ -19,7 +19,7 @@ if($conn->query($sql) === TRUE) {
 }else {
     echo "Error: ".$sql."<br>".$conn->error;
 }
-header("location: admin/adminlogin.html");
+header("location: ../admin/adminlogin.html");
 //adminsignup
 $conn->close();
 ?>

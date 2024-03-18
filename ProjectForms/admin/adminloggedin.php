@@ -94,37 +94,37 @@ if(isset($_SESSION['logging'])){
 </div>
 
 <!-- Logout button -->
-<a href="admin/adminlogout.php" style="position: fixed; left: 10px; bottom: 10px; background-color: #007bff; color: #fff; padding: 10px 20px; text-decoration: none; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Logout</a>
+<a href="../admin/adminlogout.php" style="position: fixed; left: 10px; bottom: 10px; background-color: #007bff; color: #fff; padding: 10px 20px; text-decoration: none; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Logout</a>
 
 <script>
     function redirectToDoctorView() {
-        window.location.href = "doctor/viewdoctors.php";
+        window.location.href = "../doctor/viewdoctors.php";
     }
 
     function redirectToAdminView() {
-        window.location.href = "patient/viewpatients.php";
+        window.location.href = "../patient/viewpatients.php";
     }
 
     function redirectToPharmacistView() {
-        window.location.href = "pharmacist/viewpharmacists.php";
+        window.location.href = "../pharmacist/viewpharmacists.php";
     }
     function redirectToDrugsView() {
-        window.location.href = "drug/viewdrugsreplica.php";
+        window.location.href = "../drug/viewdrugsreplica.php";
     }
     ///
     function redirectToAddDoctorView() {
-        window.location.href = "doctor/doctorsignup.html";
+        window.location.href = "../doctor/doctorsignup.html";
     }
 
     function redirectToAddPatientView() {
-        window.location.href = "patient/patientsignup.html";
+        window.location.href = "../patient/patientsignup.html";
     }
 
     function redirectToAddPharmacistView() {
-        window.location.href = "pharmacist/pharmacistsignup.html";
+        window.location.href = "../pharmacist/pharmacistsignup.html";
     }
     function redirectToAddDrugsView() {
-        window.location.href = "drug/inputDrugs.html";
+        window.location.href = "../drug/inputDrugs.html";
     }
 
 </script>
@@ -133,6 +133,6 @@ if(isset($_SESSION['logging'])){
 
 <?php
 } else {
-    header("Location: admin/adminlogin.html");
+    header("Location: ../admin/adminlogin.html");
 }
 ?>
