@@ -199,7 +199,7 @@ if (isset($_SESSION['logging'])) {
               <td> $row[Email]</td> 
               <td> $row[P_password]</td>
               <td> $row[Gender]</td>
-              <td> $row[Age]</td>
+              <td> $row[age]</td>
               <td> $row[AssociateDoctor]</td>
               </tr>";
           }
