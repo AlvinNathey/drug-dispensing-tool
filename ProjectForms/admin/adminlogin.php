@@ -37,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $_SESSION['admin_id'] = $row['admin_id'];
                     $_SESSION['admin_fname'] = $row['admin_fname'];
                     $_SESSION['admin_password'] = $row['admin_password'];
-                    header("location: adminloggedin.php");
+                    header("location: admin/adminloggedin.php");
                     exit();
                 }else{
                     header("Incorrect username or password");

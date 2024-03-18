@@ -53,7 +53,7 @@ if(isset($_SESSION['logging'])){
       // Set a timeout to hide the message after 5 seconds (5000 milliseconds)
       setTimeout(function() {
         successMessage.style.display = "none";
-      }, 2000);
+      }, 500);
     }
   </script>
 
@@ -98,33 +98,33 @@ if(isset($_SESSION['logging'])){
 
 <script>
     function redirectToDoctorView() {
-        window.location.href = "viewdoctors.php";
+        window.location.href = "doctor/viewdoctors.php";
     }
 
     function redirectToAdminView() {
-        window.location.href = "viewpatients.php";
+        window.location.href = "patient/viewpatients.php";
     }
 
     function redirectToPharmacistView() {
-        window.location.href = "viewpharmacists.php";
+        window.location.href = "pharmacist/viewpharmacists.php";
     }
     function redirectToDrugsView() {
-        window.location.href = "viewdrugsreplica.php";
+        window.location.href = "drug/viewdrugsreplica.php";
     }
     ///
     function redirectToAddDoctorView() {
-        window.location.href = "doctorsignup.html";
+        window.location.href = "doctor/doctorsignup.html";
     }
 
     function redirectToAddPatientView() {
-        window.location.href = "patientsignup.html";
+        window.location.href = "patient/patientsignup.html";
     }
 
     function redirectToAddPharmacistView() {
-        window.location.href = "pharmacistsignup.html";
+        window.location.href = "pharmacist/pharmacistsignup.html";
     }
     function redirectToAddDrugsView() {
-        window.location.href = "inputDrugs.html";
+        window.location.href = "drug/inputDrugs.html";
     }
 
 </script>
@@ -133,6 +133,6 @@ if(isset($_SESSION['logging'])){
 
 <?php
 } else {
-    header("Location: adminlogin.html");
+    header("Location: admin/adminlogin.html");
 }
 ?>
