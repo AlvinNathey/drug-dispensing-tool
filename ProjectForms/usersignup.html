@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <!--Logo when clicked leads back to home page-->
+        <a class="logo" href="homepage.html">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+                MyDispenser
+        </a>
+
+        <section class="signup-form">
+            <h1>Sign Up</h1>
+            <form action="usersignup.php" method="post">
+                <div class="user-box">
+                    <label for="username">Username</label>
+                    <input class="override" type="text" name="username" id="username" required>
+                    
+                </div>
+                <br>
+                <label for="usertype">User Type</label> 
+                <div class="user-box">
+                    
+                    <select name="usertype" id="usertype" required>
+                        <option disabled hidden selected></option>
+                        <option value="patient">Patient</option>
+                        <option value="doctor">Doctor</option>
+                        <option value="pharmacist">Pharmacist</option>
+                        <option value="admin">Administrator</option>
+                    </select>  
+                 
+                </div>
+                <br>
+                <label for="usergender">Gender</label> 
+                <select name="usergender" id="usergender" required>
+                    <option disabled hidden selected></option>
+                    <option value="Male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <div class="user-box">
+                    <br> 
+                    <label for="password">Password</label> 
+                    <input type="password" name="password" id="password" > <br>     
+                            
+                </div>
+                
+                <br>
+                <button type="submit" name="submit">Sign Up</button>
+            </form><br>
+            <a class="login-signup" href="userlogin.html">Already have an account? Login</a>
+        </section>
+
+        
+        
+    </body>
+</html>

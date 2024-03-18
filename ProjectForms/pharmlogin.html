@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h2>Pharmacist Login</h2>
+    <form action="pharmlogin.php" method="POST">
+        <label for="pharmacist_id">Pharm ID</label>
+            <input type="text" name="pharmacist_id" id="pharmacist_id" maxlength="10" required >
+            <br>
+            <br>
+            <label for="pharmacist_fname">First Name</label>
+            <input type="text" name= "pharmacist_fname" id="pharmacist_fname" maxlength="50" required>
+            <br>
+            <br>
+            <label for="pharm_password">Password</label>
+            <input type="password" name="pharm_password" id="pharm_password" maxlength="20" required >
+            <br>
+            <br>
+        <input type="submit" value="Submit">
+    </form>
+    <br><br>
+    <a href="pharmacistsignup.html">Register</a>
+</body>
+</html>

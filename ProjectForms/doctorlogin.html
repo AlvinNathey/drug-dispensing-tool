@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h2>Doctor Login</h2>
+    <form action="doctorlogin.php" method="POST">
+        <label for="doc_id">Doctor id</label>
+        <input type="text" name= "doc_id" id="doc_id" maxlength="5" required>
+        <br>
+        <br>
+       <label for="doc_fname">First name</label>
+        <input type="text" name="doc_fname" id="doc_fname" maxlength="20" required >
+        <br>
+        <br>
+        <label for="doc_password">Password</label>
+        <input type="password" name= "doc_password"id="doc_password" maxlength="20" required >
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <br><br>
+   <a href="doctorsignup.html">Register</a>
+</body>
+</html>

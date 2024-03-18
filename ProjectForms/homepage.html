@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page</title>
     <link rel="stylesheet" href="homepage.css">
+    <style>
+      .userbutton {
+        position: absolute;
+  top: 70px;
+  right: 8px;
+  font-size: 40px;
+  background-color: #557ea4;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+      }
+    </style>
 </head>
 <body>
 
@@ -38,6 +52,8 @@
              window.location.href = "pharmlogin.html";
            }
          </script>
+
+</script>
          
          <div id="header-menu">
            
@@ -103,5 +119,13 @@ These partnerships encompass a wide range of entities, including pharmaceutical 
    <h3> </footer>
 	
 </div>
+
+<input type="submit" value="Users" class="userbutton" onclick="redirectToUserLogIn()">
+
+<script>
+  function redirectToUserLogIn() {
+    window.location.href = "userlogin.html";
+  }
+</script>
 </body>
 </html>

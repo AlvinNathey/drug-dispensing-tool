@@ -1,0 +1,185 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: slategray;
+  color: white;
+}
+
+header p {
+  font-size: 150%;
+}
+
+#header-icon {
+  display: inline-block;
+  margin: 50px 10px 50px;
+}
+
+#header-desc {
+  display: inline-block;
+  margin: 25px;
+}
+
+#header-menu {
+  display: inline-block;
+  margin: 75px 50px 50px 50px;
+}
+.box0{
+  border: 1px solid black;
+  height: 150px;
+  width: 100%;
+}
+#header-desc {
+  display: inline-block;
+  margin: 25px;
+}
+.logo{
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  width:20%;
+  height: 28%
+}
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: slategray;
+  color: white;
+  clear: both; /* Add this to clear any floated elements above it */
+  position: relative; /* Add this to allow positioning the content inside it */
+  height: 100px;
+}
+
+.box5 {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+}
+h1 {
+  position: absolute;
+  top:30px;
+  left: 270px;
+}
+h2 {
+  font-size: 15px;
+  margin: 0.67em 0;
+  text-align: center;
+}
+.section.page:after {content:"";display:block;visibility:hidden;height:0;clear:both;}
+.section.page {padding: 34px 0; background: white;}
+.section.page h1 {
+  font-size: 24px;
+  text-align: center;
+  line-height: 1.6;
+  font-weight: normal;
+}
+header .nav {float: right;  margin: 0;}
+header .nav li {display: inline-block; margin: 0; list-style: none;}
+header .nav li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  line-height: 95px;
+  padding: 10px 0 0;
+  width: 100px;
+  text-align: right;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+header .nav li.on a {text-decoration:underline;}
+header .nav li a:hover, .header .nav li a:active {opacity: 0.7;}
+header .nav li.Analgesics a {margin-left: 500px;}
+header .nav li.Anesthetics a {margin-left: 30px ;}
+header .nav li.Anticoagulants a {margin-left: 50px ;}
+header .nav li.Antibiotics a {margin-left: 80px;}
+.section.catalog {padding-bottom: 42px;}
+.section.catalog h2 {
+  font-size: 24px;
+  text-align: center;
+  line-height: 1.6;
+  font-weight: normal;
+  padding-top: 20px;
+}
+.section.catalog ul.items {margin: 0 0 -17px 0; padding: 0; width: 997px;}
+.section.catalog ul.items li {
+  display: inline-block;
+  list-style: none;
+  width: 204px;
+  text-align: center;
+  padding: 14px;
+  margin: 0 0 17px 17px;
+  position: relative;
+  left: -17px;
+}
+.section.catalog ul.items li a:hover:after {
+  content: '+';
+  font-size: 50px; position: absolute; top:35px; right:30px; color: #3888c2; vertical-align: top;
+}
+.section.catalog ul.items li a {
+  background: white;
+  display: block;
+  padding: 30px 0 10px;
+  text-decoration: none;
+}
+.details-button {
+color: #888;
+}
+.section.catalog ul.items li a:hover {
+  opacity: 1;
+  color: #666;
+}
+.section.catalog ul.items li img {
+  width: 190px;
+  border: 6px solid #f0eeed;
+}
+.section.catalog ul.items li p {
+  margin-left: 0;
+  margin-right: 0;
+  width: auto;
+}
+.wrapper {width: 980px; margin: 0 auto;}
+
+.section.catalog ul.items {margin: 0 0 -17px 0; padding: 0; width: 997px;}
+.section.catalog ul.items li {
+  display: inline-block;
+  list-style: none;
+  width: 204px;
+  text-align: center;
+  padding: 14px;
+  margin: 0 0 17px 17px;
+  position: relative;
+  left: -17px;
+}
+.section.catalog ul.items li a:hover:after {
+  content: '+';
+  font-size: 50px; position: absolute; top:35px; right:30px; color: #3888c2; vertical-align: top;
+}
+.section.catalog ul.items li a {
+  background: white;
+  display: block;
+  padding: 30px 0 10px;
+  text-decoration: none;
+}
+.details-button {
+color: #888;
+}
+.section.catalog ul.items li a:hover {
+  opacity: 1;
+  color: #666;
+}
+.section.catalog ul.items li img {
+  width: 190px;
+  border: 6px solid #f0eeed;
+}
+.section.catalog ul.items li p {
+  margin-left: 0;
+  margin-right: 0;
+  width: auto;
+}

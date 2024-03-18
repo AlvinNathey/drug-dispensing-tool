@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor login</title>
+    <link rel="stylesheet" type="text/css" href="decorate.css">
+</head>
+<body>
+
+    <h1>Doctor Signup</h1>
+    <form method="post" action="./doctorsignup.php">
+        <label for="doc_id">Doctor id</label>
+            <input type="text" name= "doc_id" id="doc_id" maxlength="5" required>
+            <br>
+            <br>
+           <label for="doc_fname">First name</label>
+            <input type="text" name="doc_fname" id="doc_fname" maxlength="20" required >
+            <br>
+            <br>
+            <label for="doc_lname">Last name</label>
+            <input type="text" name="doc_lname" id="doc_lname" maxlength="20" required >
+            <br>
+            <br>
+            <label for="doc_password">Password</label>
+            <input type="password" name= "doc_password"id="doc_password" maxlength="20" required >
+            <br>
+            <br>
+            <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
