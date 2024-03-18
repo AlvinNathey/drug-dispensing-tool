@@ -42,7 +42,7 @@ if(isset($_SESSION['logging'])){
             background-color: #0056b3; /* Darker color on hover */
         }
     </style>
-    <title>Logged In Page</title>
+    <title>Admin logged in</title>
 
     <script>
     // Function to display the success message and hide it after a set time

@@ -8,7 +8,7 @@ if(isset($_SESSION['logging'])){
     <!DOCTYPE html>
 <html>
 <head>
-    <title>Logged In Page</title>
+    <title>Doc logged in</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -86,7 +86,7 @@ if(isset($_SESSION['logging'])){
       // Set a timeout to hide the message after 5 seconds (5000 milliseconds)
       setTimeout(function() {
         successMessage.style.display = "none";
-      }, 2000);
+      }, 500);
     }
   </script>
 
@@ -109,7 +109,7 @@ if(isset($_SESSION['logging'])){
     <div class="container">
         <h2>Write Patient's Prescription</h2>
         <h3>Enter the Patient's SSN</h3>
-        <form method="post" action="insertprescription.php">
+        <form method="post" action="drug/insertprescription.php">
             <label for="SSN">SSN</label>
             <input type="text" name="SSN" id="SSN" maxlength="10" required>
             <br>
@@ -132,13 +132,13 @@ if(isset($_SESSION['logging'])){
         </form>
     </div>
   <!-- Logout button -->
-<a href="doctorlogout.php" style="display: block; background-color:red; color: #fff; padding: 10px 20px; text-decoration: none; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; position: relative; bottom: 0; left: 0;">Logout</a>
+<a href="doctor/doctorlogout.php" style="display: block; background-color:red; color: #fff; padding: 10px 20px; text-decoration: none; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; position: relative; bottom: 0; left: 0;">Logout</a>
 
 </body>
 </html>
 
 <?php
 }else{
-    header("Location: doctorlogin.html");
+    header("Location: doctor/doctorlogin.html");
 }
 ?>

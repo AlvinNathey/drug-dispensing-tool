@@ -37,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $_SESSION['doc_id'] = $row['doc_id'];
                     $_SESSION['doc_fname'] = $row['doc_fname'];
                     $_SESSION['doc_password'] = $row['doc_password'];
-                    header("location: doctorloggedin.php");
+                    header("location: doctor/doctorloggedin.php");
                     exit();
                 }else{
                     header("Incorrect username or password");

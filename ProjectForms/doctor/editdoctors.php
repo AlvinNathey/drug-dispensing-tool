@@ -9,7 +9,7 @@ $doc_password = "";
  if($_SERVER['REQUEST_METHOD'] == 'GET'){
 
     if(!isset($_GET["doc_id"])){
-        header("Location: viewdoctors.php");
+        header("Location: doctor/viewdoctors.php");
     }
 
     $doc_id=$_GET["doc_id"];
@@ -19,7 +19,7 @@ $doc_password = "";
     $row=$result->fetch_assoc();
  
     if(!$row ){
-         header("Location: viewdoctors.php");
+         header("Location: doctor/viewdoctors.php");
          exit;
     }
     $doc_id = $row["doc_id"];
@@ -44,7 +44,7 @@ $doc_password = "";
 
         $result = mysqli_query($conn, $sql);
 
-        header('Location: viewdoctors.php');
+        header('Location: dpctor/viewdoctors.php');
 
     
 
