@@ -11,6 +11,8 @@ if(isset($_SESSION['logging']) && $_SESSION['logging'] === true){
     exit();
 } else {
     // If not logged in, you can handle this case differently
-    echo "You are not logged in.";
+    // For example, you can redirect them to the login page or display a message
+    header("location: ../adminlogin.html");
+    exit();
 }
 ?>

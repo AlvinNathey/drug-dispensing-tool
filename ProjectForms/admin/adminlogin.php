@@ -1,11 +1,15 @@
 <?php
 session_start();
-if(isset($_SESSION['logging']) && $_SESSION['logging'] === true){
-
-}
 require_once("../connection.php");
+
+if(isset($_SESSION['logging']) && $_SESSION['logging'] === true){
+    header("Location: ../admin/adminloggedin.php");
+    exit();
+}
+
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    if(isset($_POST['admin_id'])  && isset($_POST['admin_fname']) && isset($_POST['admin_password'])){
+    if(isset($_POST['admin_id']) && isset($_POST['admin_fname']) && isset($_POST['admin_password'])){
         function validate($data){
             $data = trim($data);
             $data = stripslashes($data);
@@ -16,35 +20,34 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $admin_id = validate($_POST['admin_id']);
         $admin_fname = validate($_POST['admin_fname']);
         $admin_password = validate($_POST['admin_password']);
-        if(empty($admin_id)){
-            header("Username is required");
+        
+        if(empty($admin_id) || empty($admin_fname) || empty($admin_password)){
+            header("Location: adminlogin.html?error=emptyfields");
             exit();
-        }elseif(empty($admin_fname)){
-            header("First name is required");
-            exit();
-        }elseif(empty($admin_password)){
-            header("Password is required");
-            exit();
-        }else{
+        } else {
             $sql = "SELECT * FROM tbladmin WHERE admin_id ='$admin_id' AND admin_fname = '$admin_fname' AND admin_password ='$admin_password'";
             $result = $conn->query($sql);
             if($result->num_rows === 1){
                 $row = $result->fetch_assoc();
                 if($row['admin_id']==$admin_id && $row['admin_fname'] == $admin_fname && $row['admin_password']==$admin_password){
-                    session_start();
-                    echo "Logged in";
                     $_SESSION['logging'] = true;
                     $_SESSION['admin_id'] = $row['admin_id'];
                     $_SESSION['admin_fname'] = $row['admin_fname'];
                     $_SESSION['admin_password'] = $row['admin_password'];
-                    header("location: ../admin/adminloggedin.php");
+                    header("Location: ../admin/adminloggedin.php");
                     exit();
-                }else{
-                    header("Incorrect username or password");
+                } else {
+                    header("Location: ../admin/adminlogin.html?error=incorrectlogin");
+                    exit();
                 }
+            } else {
+                header("Location: adminlogin.html?error=nouser");
+                exit();
             }
         }
+    } else {
+        header("Location: adminlogin.html");
+        exit();
     }
 }
-
 ?>

@@ -42,7 +42,7 @@ if(isset($_SESSION['logging'])){
             background-color: #0056b3; /* Darker color on hover */
         }
     </style>
-    <title>Admin logged in</title>
+    <title>Logged In Page</title>
 
     <script>
     // Function to display the success message and hide it after a set time
@@ -53,7 +53,7 @@ if(isset($_SESSION['logging'])){
       // Set a timeout to hide the message after 5 seconds (5000 milliseconds)
       setTimeout(function() {
         successMessage.style.display = "none";
-      }, 500);
+      }, 2000);
     }
   </script>
 
@@ -94,7 +94,7 @@ if(isset($_SESSION['logging'])){
 </div>
 
 <!-- Logout button -->
-<a href="../admin/adminlogout.php" style="position: fixed; left: 10px; bottom: 10px; background-color: #007bff; color: #fff; padding: 10px 20px; text-decoration: none; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Logout</a>
+<a href="adminlogout.php" style="position: fixed; left: 10px; bottom: 10px; background-color: #007bff; color: #fff; padding: 10px 20px; text-decoration: none; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Logout</a>
 
 <script>
     function redirectToDoctorView() {
@@ -106,7 +106,7 @@ if(isset($_SESSION['logging'])){
     }
 
     function redirectToPharmacistView() {
-        window.location.href = "../pharmacist/viewpharmacists.php";
+        window.location.href = "../pharm/viewpharmacists.php";
     }
     function redirectToDrugsView() {
         window.location.href = "../drug/viewdrugsreplica.php";
@@ -121,7 +121,7 @@ if(isset($_SESSION['logging'])){
     }
 
     function redirectToAddPharmacistView() {
-        window.location.href = "../pharmacist/pharmacistsignup.html";
+        window.location.href = "../pharm/pharmacistsignup.html";
     }
     function redirectToAddDrugsView() {
         window.location.href = "../drug/inputDrugs.html";
@@ -133,6 +133,6 @@ if(isset($_SESSION['logging'])){
 
 <?php
 } else {
-    header("Location: ../admin/adminlogin.html");
+    header("Location: adminlogin.html");
 }
 ?>

@@ -2,10 +2,8 @@
 session_start();
 
 if(isset($_SESSION['logging'])){
-
 ?>
-    
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Doc logged in</title>
@@ -17,19 +15,14 @@ if(isset($_SESSION['logging'])){
             padding: 0;
         }
 
-        /* Header Styles */
-       
-          .welcome {
+        .welcome {
             position: absolute;
             top: 0;
             right: 0;
-
             color: #ffffff;
             padding: 5px;
-        
         }
 
-        /* Content Styles */
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -41,17 +34,16 @@ if(isset($_SESSION['logging'])){
             margin-top: 30px;
         }
 
-        /* Form Styles */
         form {
-          background-color: mediumturquoise;
-            text-align: center; /* Center-align form elements */
+            background-color: mediumturquoise;
+            text-align: center;
             margin-top: 20px;
         }
 
         label {
             display: block;
             margin-bottom: 5px;
-            text-align: left; /* Align labels to the left */
+            text-align: left;
         }
 
         input[type="text"],
@@ -77,68 +69,69 @@ if(isset($_SESSION['logging'])){
         }
     </style>
 
-<script>
-    // Function to display the success message and hide it after a set time
-    function showSuccessMessage() {
-      var successMessage = document.getElementById("success-message");
-      successMessage.style.display = "block";
-      
-      // Set a timeout to hide the message after 5 seconds (5000 milliseconds)
-      setTimeout(function() {
-        successMessage.style.display = "none";
-      }, 500);
-    }
-  </script>
+    <script>
+        // Function to display the success message and hide it after a set time
+        function showSuccessMessage() {
+            var successMessage = document.getElementById("success-message");
+            successMessage.style.display = "block";
 
+            // Set a timeout to hide the message after 5 seconds (5000 milliseconds)
+            setTimeout(function() {
+                successMessage.style.display = "none";
+            }, 5000); // Adjusted timeout to 5 seconds
+        }
+    </script>
 </head>
 <body>
 
 <!-- Success message container -->
 <div id="success-message" style="display: none; background-color: #4CAF50; color: white; text-align: center; padding: 10px;">
     Doctor successfully registered
-  </div>
+</div>
 
-  <!-- Call the function to show the success message -->
-  <script>
+<!-- Call the function to show the success message -->
+<script>
     showSuccessMessage();
-  </script>
+</script>
 
-    <div class="welcome">
-        <h3>Welcome Dr, <?php echo $_SESSION["doc_fname"] ; ?></h3>
-    </div>
-    <div class="container">
-        <h2>Write Patient's Prescription</h2>
-        <h3>Enter the Patient's SSN</h3>
-        <form method="post" action="drug/insertprescription.php">
-            <label for="SSN">SSN</label>
-            <input type="text" name="SSN" id="SSN" maxlength="10" required>
-            <br>
-            <label for="f_name">First name</label>
-            <input type="text" name="f_name" id="f_name" maxlength="20" required>
-            <br><br>
-            <label for="diagnosis">Diagnosis:</label>
-            <textarea id="diagnosis" name="diagnosis" required></textarea><br>
-            <br><br>
-            <label for="drug_name">Drug name:</label>
-            <textarea id="drug_name" name="drug_name" required></textarea><br>
-            <br><br>
-            <label for="drug_prize">Drug prize:</label>
-            <textarea id="drug_prize" name="drug_prize" required></textarea><br>
-            <br><br>
-            <label for="dosage">Dosage:</label>
-            <textarea id="dosage" name="dosage" required></textarea><br>
-            <br><br>
-            <input type="submit" value="Submit Prescription">
-        </form>
-    </div>
-  <!-- Logout button -->
-<a href="doctor/doctorlogout.php" style="display: block; background-color:red; color: #fff; padding: 10px 20px; text-decoration: none; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; position: relative; bottom: 0; left: 0;">Logout</a>
+<div class="welcome">
+    <h3>Welcome Dr, <?php echo $_SESSION["doc_fname"] ; ?></h3>
+</div>
+
+<div class="container">
+    <h2>Write Patient's Prescription</h2>
+    <h3>Enter the Patient's SSN</h3>
+    <form method="post" action="../drug/insertprescription.php">
+        <label for="SSN">SSN</label>
+        <input type="text" name="SSN" id="SSN" maxlength="10" required>
+        <br>
+        <label for="f_name">First name</label>
+        <input type="text" name="f_name" id="f_name" maxlength="20" required>
+        <br><br>
+        <label for="diagnosis">Diagnosis:</label>
+        <textarea id="diagnosis" name="diagnosis" required></textarea><br>
+        <br><br>
+        <label for="drug_name">Drug name:</label>
+        <textarea id="drug_name" name="drug_name" required></textarea><br>
+        <br><br>
+        <label for="drug_prize">Drug prize:</label>
+        <textarea id="drug_prize" name="drug_prize" required></textarea><br>
+        <br><br>
+        <label for="dosage">Dosage:</label>
+        <textarea id="dosage" name="dosage" required></textarea><br>
+        <br><br>
+        <input type="submit" value="Submit Prescription">
+    </form>
+</div>
+
+<!-- Logout button -->
+<a href="../doctor/doctorlogout.php" style="display: block; background-color:red; color: #fff; padding: 10px 20px; text-decoration: none; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; position: relative; bottom: 0; left: 0;">Logout</a>
 
 </body>
 </html>
 
 <?php
 }else{
-    header("Location: doctor/doctorlogin.html");
+    header("Location: ../doctor/doctorlogin.html");
 }
 ?>
